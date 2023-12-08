@@ -1,0 +1,74 @@
+#pragma once
+
+#include <type_traits>
+
+namespace jsonifyer::type_traits {
+
+    template<class, class = void>
+    struct has_mapped_type : std::false_type { };
+
+    template<class T>
+    struct has_mapped_type<T, std::void_t<typename T::mapped_type>> : std::true_type { };
+
+    template<class, class = void>
+    struct has_key_type : std::false_type { };
+
+    template<class T>
+    struct has_key_type<T, std::void_t<typename T::key_type>> : std::true_type { };
+
+    template<class, class = void>
+    struct key_type { using type = void; };
+
+    template<class T>
+    struct key_type<T, std::void_t<typename T::key_type>> { using type = typename T::key_type; };
+
+    template<typename Test, template<typename...> class Ref>
+    struct is_specialization : std::false_type {};
+
+    template<template<typename...> class Ref, typename... Args>
+    struct is_specialization<Ref<Args...>, Ref> : std::true_type {};
+
+    /// https://dev.krzaq.cc/post/checking-whether-a-class-has-a-member-function-with-a-given-signature/
+    template<typename T>
+    class has_size_method {
+
+        template<typename U>
+        static auto test(int) -> decltype(std::declval<U>().size() == 1, std::true_type());
+
+        template<typename>
+        static auto test(...) -> std::false_type;
+
+    public:
+        static constexpr bool value = std::is_same<decltype(test<T>(0)), std::true_type>::value;
+    };
+
+    /**
+     * for Containers that have `push_back` method:
+     * * vector
+     * * list
+     * * deque
+     **/
+    template<typename T>
+    class has_push_back_method {
+
+        template<typename U>
+        static auto test(int) -> decltype(std::declval<U>().push_back({}), std::true_type());
+
+        template<typename>
+        static auto test(...) -> std::false_type;
+
+    public:
+        static constexpr bool value = std::is_same<decltype(test<T>(0)), std::true_type>::value;
+    };
+
+    template<class T>
+    struct is_map {
+        static constexpr bool value = has_key_type<T>::value && has_mapped_type<T>::value;
+    };
+
+    template<class T>
+    struct is_set {
+        static constexpr bool value = has_key_type<T>::value && !has_mapped_type<T>::value;
+    };
+
+}
