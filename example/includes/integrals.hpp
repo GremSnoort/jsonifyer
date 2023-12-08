@@ -5,7 +5,7 @@
 namespace example::integral {
 
     /**
-     * @brief simple five int-s POD struct
+     * @brief simple five int-s struct
      */
     struct ints_t {
         int _0;
@@ -47,7 +47,7 @@ namespace example::integral {
     };
 
     /**
-     * @brief signed int-s POD struct
+     * @brief signed int-s struct
      */
     struct signed_ints_t {
         int8_t _0;
@@ -87,7 +87,7 @@ namespace example::integral {
     };
 
     /**
-     * @brief unsigned int-s POD struct
+     * @brief unsigned int-s struct
      */
     struct unsigned_ints_t {
         uint8_t _0;
@@ -127,7 +127,7 @@ namespace example::integral {
     };
 
     /**
-     * @brief simple char-s POD struct
+     * @brief simple char-s struct
      */
     struct chars_t {
         char _0;
@@ -167,7 +167,7 @@ namespace example::integral {
     };
 
     /**
-     * @brief simple floats-s POD struct
+     * @brief simple floats-s struct
      */
     struct floats_t {
         float _0;
