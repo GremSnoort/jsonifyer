@@ -63,6 +63,9 @@ namespace jsonifyer::type_traits {
     };
 
     template<class T>
+    static constexpr auto has_push_back_method_v = has_push_back_method<T>::value;
+
+    template<class T>
     struct is_map {
         static constexpr bool value =
                 has_key_type<T>::value && has_mapped_type<T>::value &&
@@ -71,9 +74,15 @@ namespace jsonifyer::type_traits {
     };
 
     template<class T>
+    static constexpr auto is_map_v = is_map<T>::value;
+
+    template<class T>
     struct is_set {
         static constexpr bool value = has_key_type<T>::value && !has_mapped_type<T>::value;
     };
+
+    template<class T>
+    static constexpr auto is_set_v = is_set<T>::value;
 
     template<class T>
     struct is_custom {

@@ -127,7 +127,7 @@ namespace jsonifyer::parser {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-                 jsonifyer::type_traits::is_map<T>::value, bool> = true>
+                 jsonifyer::type_traits::is_map_v<T>, bool> = true>
     __GET_HEADER(T) {
         auto obj_ptr = jv.if_object();
         if (!obj_ptr) {
@@ -161,7 +161,7 @@ namespace jsonifyer::parser {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-                 jsonifyer::type_traits::is_set<T>::value, bool> = true>
+                 jsonifyer::type_traits::is_set_v<T>, bool> = true>
     __GET_HEADER(T) {
         auto arr_ptr = jv.if_array();
         if (!arr_ptr) {
@@ -190,7 +190,7 @@ namespace jsonifyer::parser {
              std::enable_if_t<
                  I == 0 &&
                  !std::is_same_v<T, std::string> &&
-                 jsonifyer::type_traits::has_push_back_method<T>::value, bool> = true>
+                 jsonifyer::type_traits::has_push_back_method_v<T>, bool> = true>
     __GET_HEADER(T) {
         auto arr_ptr = jv.if_array();
         if (!arr_ptr) {

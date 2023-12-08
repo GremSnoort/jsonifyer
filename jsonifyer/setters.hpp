@@ -24,16 +24,16 @@ namespace jsonifyer::serializer {
                  I == 0 &&
                  std::is_fundamental_v<T> &&
                  (std::is_integral_v<T> || std::is_floating_point_v<T>), bool> = true>
-    inline auto set(const T& value) -> ::boost::json::value {
-        return ::boost::json::value(value);
+    inline auto set(const T& input) -> ::boost::json::value {
+        return ::boost::json::value(input);
     }
 
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
                  std::is_same_v<T, std::string>, bool> = true>
-    inline auto set(const T& value) -> ::boost::json::value {
-        return ::boost::json::value(::boost::json::string_view(value.data(), value.size()));
+    inline auto set(const T& input) -> ::boost::json::value {
+        return ::boost::json::value(::boost::json::string_view(input.data(), input.size()));
     }
 
     /// Declaration --->>>
@@ -48,11 +48,11 @@ namespace jsonifyer::serializer {
              std::enable_if_t<
                  I == 0 &&
                  (!std::is_same_v<T, std::string> &&
-                 jsonifyer::type_traits::has_push_back_method<T>::value)
+                 jsonifyer::type_traits::has_push_back_method_v<T>)
                  || jsonifyer::type_traits::is_set<T>::value, bool> = true>
-    inline auto set(const T& value) -> ::boost::json::value {
+    inline auto set(const T& input) -> ::boost::json::value {
         ::boost::json::array arr;
-        for (const auto& v : value) {
+        for (const auto& v : input) {
             arr.emplace_back(set<0>(v));
         }
         return ::boost::json::value(arr);
@@ -61,10 +61,10 @@ namespace jsonifyer::serializer {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-                 jsonifyer::type_traits::is_map<T>::value, bool> = true>
-    inline auto set(const T& value) -> ::boost::json::value {
+                 jsonifyer::type_traits::is_map_v<T>, bool> = true>
+    inline auto set(const T& input) -> ::boost::json::value {
         ::boost::json::object obj;
-        for (const auto& [k, v] : value) {
+        for (const auto& [k, v] : input) {
             std::string key = "";
             if constexpr (std::is_base_of_v<typename jsonifyer::type_traits::key_type<T>::type, std::string>) {
                 key = k;
