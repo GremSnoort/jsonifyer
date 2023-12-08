@@ -85,5 +85,5 @@ include_directories(${ROOT_PATH})
 include(CTest)
 enable_testing()
 
-#add_subdirectory(example)
+add_subdirectory(example)
 add_subdirectory(tests)
