@@ -46,6 +46,14 @@ namespace test {
 
     ///////////////////////////////////////////////////////////////////////////////////////////
 
+    auto buildstr(std::size_t sz) -> std::string {
+        std::string v;
+        for (std::size_t j = 0; j <= sz; ++j) {
+            v.push_back(j % sizeof(char));
+        }
+        return v;
+    }
+
     template<class T,
              std::enable_if_t<
                  jsonifyer::type_traits::has_push_back_method<T>::value, bool> = true>
@@ -54,11 +62,7 @@ namespace test {
         using value_t = typename T::value_type;
         for (std::size_t i = 0; i < len; ++i) {
             if constexpr (std::is_same_v<value_t, std::string>) {
-                std::string v;
-                for (std::size_t j = 0; j <= i; ++j) {
-                    v.push_back(j % sizeof(char));
-                }
-                out.push_back(v);
+                out.push_back(buildstr(i));
             } else {
                 out.push_back(static_cast<value_t>(i % sizeof(value_t)));
             }
@@ -74,11 +78,7 @@ namespace test {
         using value_t = typename T::value_type;
         for (std::size_t i = 0; i < len; ++i) {
             if constexpr (std::is_same_v<value_t, std::string>) {
-                std::string v;
-                for (std::size_t j = 0; j <= i; ++j) {
-                    v.push_back(j % sizeof(char));
-                }
-                out.emplace(v);
+                out.emplace(buildstr(i));
             } else {
                 out.emplace(static_cast<value_t>(i % sizeof(value_t)));
             }
@@ -103,11 +103,7 @@ namespace test {
 
         for (std::size_t i = 0; i < len; ++i) {
             if constexpr (std::is_same_v<value_t, std::string>) {
-                std::string v;
-                for (std::size_t j = 0; j <= i; ++j) {
-                    v.push_back(j % sizeof(char));
-                }
-                emplace(i, std::move(v), out);
+                emplace(i, buildstr(i), out);
             } else {
                 emplace(i, static_cast<value_t>(i % sizeof(value_t)), out);
             }
