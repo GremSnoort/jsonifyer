@@ -13,14 +13,9 @@ TEST_CASE("parser test") {
         using type_t = example::integral::ints_t;
         type_t obj;
 
-        std::string data = fmt::format
-                ("{\
-                    \"_0\": {},\
-                    \"_1\": {},\
-                    \"_2\": {},\
-                    \"_3\": {},\
-                    \"_4\": {}\
-                }", INT_MAX, INT_MAX -1, INT_MAX -2, INT_MAX -3, INT_MAX -4);
+        std::string data = "{" + fmt::format
+                ("\"_0\": {},\"_1\": {},\"_2\": {},\"_3\": {},\"_4\": {}",
+                 INT_MAX, INT_MAX -1, INT_MAX -2, INT_MAX -3, INT_MAX -4) + "}";
 
         std::string error;
         auto ret = jsonifyer::parser::from_string<type_t>(data, __func__, obj, error);
