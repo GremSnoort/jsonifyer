@@ -12,6 +12,8 @@
 
 #include "forward.hpp"
 
+#include <example/generate.hpp>
+
 template<std::size_t I, class Data_t, class Value_t>
 auto check(Data_t& data, const Value_t& value) {
     std::get<I>(data) = value;
@@ -25,37 +27,25 @@ auto check_4_custom() {
     {
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     {
         static constexpr auto I = 1;
         auto& ref = data._1;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(64);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     {
         static constexpr auto I = 2;
         auto& ref = data._2;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(128);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     {
         static constexpr auto I = 3;
         auto& ref = data._3;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(256);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 }
 
@@ -66,46 +56,31 @@ auto check_5_custom() {
     {
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     {
         static constexpr auto I = 1;
         auto& ref = data._1;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(64);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     {
         static constexpr auto I = 2;
         auto& ref = data._2;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(128);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     {
         static constexpr auto I = 3;
         auto& ref = data._3;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(256);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     {
         static constexpr auto I = 4;
         auto& ref = data._4;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(512);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 }
 
@@ -230,12 +205,11 @@ TEST_CASE("std::get test") {
         using type_t = example::vector::bool_vectors_t;
         type_t data;
 
+        example::generate<0>(512, data);
+
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     SECTION("vector int_vectors_t") {
@@ -299,12 +273,11 @@ TEST_CASE("std::get test") {
         using type_t = example::list::bool_lists_t;
         type_t data;
 
+        example::generate<0>(512, data);
+
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     SECTION("list int_lists_t") {
@@ -368,12 +341,11 @@ TEST_CASE("std::get test") {
         using type_t = example::deque::bool_deques_t;
         type_t data;
 
+        example::generate<0>(512, data);
+
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     SECTION("deque int_deques_t") {
@@ -437,12 +409,11 @@ TEST_CASE("std::get test") {
         using type_t = example::set::bool_sets_t;
         type_t data;
 
+        example::generate<0>(512, data);
+
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     SECTION("set int_sets_t") {
@@ -506,12 +477,11 @@ TEST_CASE("std::get test") {
         using type_t = example::map::bool_maps_t;
         type_t data;
 
+        example::generate<0>(512, data);
+
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     SECTION("map int_maps_t") {
@@ -575,12 +545,11 @@ TEST_CASE("std::get test") {
         using type_t = example::unordered_map::bool_unordered_maps_t;
         type_t data;
 
+        example::generate<0>(512, data);
+
         static constexpr auto I = 0;
         auto& ref = data._0;
-        auto value = test::gen<std::remove_reference_t<decltype(ref)>>(32);
-        std::get<I>(data) = value;
-        test::cmp(std::get<I>(data), value);
-        test::cmp(ref, value);
+        test::cmp(std::get<I>(data), ref);
     }
 
     SECTION("unordered_map int_unordered_maps_t") {

@@ -14,6 +14,8 @@
 
 #include "forward.hpp"
 
+#include <example/generate.hpp>
+
 #include <jsonifyer/parser.hpp>
 #include <jsonifyer/serializer.hpp>
 
@@ -25,23 +27,6 @@ auto parse(const std::string& input, T& output) -> bool {
         std::cerr << fmt::format("{}:{}:{} !!! Erorr: {} !!!", __FILE__, __LINE__, __func__, error) << std::endl;
     }
     return ret;
-}
-
-template<class T>
-auto fill_4() -> T {
-    T input;
-    input._0 = test::gen<std::remove_reference_t<decltype(input._0)>>(32);
-    input._1 = test::gen<std::remove_reference_t<decltype(input._1)>>(64);
-    input._2 = test::gen<std::remove_reference_t<decltype(input._2)>>(128);
-    input._3 = test::gen<std::remove_reference_t<decltype(input._3)>>(256);
-    return input;
-}
-
-template<class T>
-auto fill_5() -> T {
-    auto input = fill_4<T>();
-    input._4 = test::gen<std::remove_reference_t<decltype(input._4)>>(512);
-    return input;
 }
 
 template<class T>
@@ -85,6 +70,8 @@ TEST_CASE("complex serializer & parser tests") {
 
     SECTION("string strings_t") {
         using type_t = example::string::strings_t;
-        check(fill_5<type_t>());
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
     }
 }
