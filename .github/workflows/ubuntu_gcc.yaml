@@ -1,4 +1,4 @@
-#on: [push, pull_request]
+name: GCC Builds
 on: [push]
 
 jobs:
@@ -8,8 +8,6 @@ jobs:
         cxx_standard: [17]
         build_type: ["Release", "Debug"]
         configuration: [
-          {"UBUNTU_VERSION":"18.04", "TOOLCHAIN_VERSION":"5"},
-          {"UBUNTU_VERSION":"18.04", "TOOLCHAIN_VERSION":"6"},
           {"UBUNTU_VERSION":"18.04", "TOOLCHAIN_VERSION":"7"},
           {"UBUNTU_VERSION":"18.04", "TOOLCHAIN_VERSION":"8"},
 
