@@ -18,6 +18,15 @@ namespace std {
 
 namespace jsonifyer::parser {
 
+/**
+ * @brief get
+ *
+ * @param jv            - const json value input data to parse
+ * @param object_name   - const lvalue ref on Object's name
+ * @param field         - const lvalue ref on currently extracted field name
+ * @param out_value     - lvalue otuput ref
+ * @param error_msg     - lvalue output message string
+ */
 #define __GET_HEADER(Type) \
     inline auto get( \
             const ::boost::json::value& jv, \
@@ -28,13 +37,7 @@ namespace jsonifyer::parser {
 
     /**
      * @brief get
-     * @details For fundamental integral types
-     *
-     * @param jv            - const json value input data to parse
-     * @param object_name   - const lvalue ref on Object's name
-     * @param field         - const lvalue ref on currently extracted field name
-     * @param out_value     - lvalue otuput ref
-     * @param error_msg     - lvalue output message string
+     * @details For arithmetic integral types
      */
     template<std::size_t I, class T,
              std::enable_if_t<
@@ -69,13 +72,7 @@ namespace jsonifyer::parser {
 
     /**
      * @brief get
-     * @details For fundamental floating_point types
-     *
-     * @param jv            - const json value input data to parse
-     * @param object_name   - const lvalue ref on Object's name
-     * @param field         - const lvalue ref on currently extracted field name
-     * @param out_value     - lvalue otuput ref
-     * @param error_msg     - lvalue output message string
+     * @details For arithmetic floating_point types
      */
     template<std::size_t I, class T,
              std::enable_if_t<
@@ -97,13 +94,7 @@ namespace jsonifyer::parser {
 
     /**
      * @brief get
-     * @details For string type
-     *
-     * @param jv            - const json value input data to parse
-     * @param object_name   - const lvalue ref on Object's name
-     * @param field         - const lvalue ref on currently extracted field name
-     * @param out_value     - lvalue otuput ref
-     * @param error_msg     - lvalue output message string
+     * @details For string types
      */
     template<std::size_t I, class T,
              std::enable_if_t<
@@ -122,28 +113,16 @@ namespace jsonifyer::parser {
         return true;
     }
 
-#define __CUSTOM_CLASS_HEADER(I, T) \
-    template<std::size_t I, typename T, \
-             std::enable_if_t< \
-                 false == std::is_arithmetic_v<T> && \
-                 false == std::is_same_v<T, std::string> && \
-                 false == jsonifyer::type_traits::is_map<T>::value && \
-                 false == (jsonifyer::type_traits::is_set<T>::value || jsonifyer::type_traits::has_push_back_method<T>::value) && \
-                 true == std::is_class_v<T> && I < 1024, bool> = true> \
-    __GET_HEADER(T)
-
-    template<typename T>
+    /// Declaration --->>>
+    template<std::size_t I, class T,
+             std::enable_if_t<
+                 jsonifyer::type_traits::is_custom_v<T> && I < 1024, bool> = true>
     __GET_HEADER(T);
+    /// Declaration ---<<<
 
     /**
      * @brief get
-     * @details For map type
-     *
-     * @param jv            - const json value input data to parse
-     * @param object_name   - const lvalue ref on Object's name
-     * @param field         - const lvalue ref on currently extracted field name
-     * @param out_value     - lvalue otuput ref
-     * @param error_msg     - lvalue output message string
+     * @details For map types
      */
     template<std::size_t I, class T,
              std::enable_if_t<
@@ -178,12 +157,6 @@ namespace jsonifyer::parser {
     /**
      * @brief get
      * @details For set type
-     *
-     * @param jv            - const json value input data to parse
-     * @param object_name   - const lvalue ref on Object's name
-     * @param field         - const lvalue ref on currently extracted field name
-     * @param out_value     - lvalue otuput ref
-     * @param error_msg     - lvalue output message string
      */
     template<std::size_t I, class T,
              std::enable_if_t<
@@ -212,12 +185,6 @@ namespace jsonifyer::parser {
     /**
      * @brief get
      * @details For list & vector type
-     *
-     * @param jv            - const json value input data to parse
-     * @param object_name   - const lvalue ref on Object's name
-     * @param field         - const lvalue ref on currently extracted field name
-     * @param out_value     - lvalue otuput ref
-     * @param error_msg     - lvalue output message string
      */
     template<std::size_t I, class T,
              std::enable_if_t<
@@ -247,14 +214,7 @@ namespace jsonifyer::parser {
     /**
      * @brief get
      * @details For custom class types
-     *
-     * @param jv            - const json value input data to parse
-     * @param object_name   - const lvalue ref on Object's name
-     * @param field         - const lvalue ref on currently extracted field name
-     * @param out_value     - lvalue otuput ref
-     * @param error_msg     - lvalue output message string
      */
-    ///__CUSTOM_CLASS_HEADER(I, T) {
     template<std::size_t I, class T,
              std::enable_if_t<
                  jsonifyer::type_traits::is_custom_v<T> && I < 1024, bool> = true>

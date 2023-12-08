@@ -36,8 +36,13 @@ namespace jsonifyer::serializer {
         return ::boost::json::value(::boost::json::string_view(value.data(), value.size()));
     }
 
-    template<class T>
-    inline auto set(const T& value) -> ::boost::json::value;
+    /// Declaration --->>>
+    template<std::size_t I, class T,
+             std::enable_if_t<
+                 I == 0 &&
+                 jsonifyer::type_traits::is_custom_v<T>, bool> = true>
+    inline auto set(const T& input) -> ::boost::json::value;
+    /// Declaration ---<<<
 
     template<std::size_t I, class T,
              std::enable_if_t<

@@ -56,6 +56,7 @@ conan_cmake_run(REQUIRES
     boost/1.81.0
     fmt/10.1.1
     catch2/3.3.2
+    benchmark/1.8.3
     BASIC_SETUP CMAKE_TARGETS
     ENV CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
     BUILD missing
@@ -85,5 +86,6 @@ include_directories(${ROOT_PATH})
 include(CTest)
 enable_testing()
 
+add_subdirectory(benchmarks)
 add_subdirectory(example)
 add_subdirectory(tests)
