@@ -42,7 +42,8 @@ namespace jsonifyer::serializer {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-                 jsonifyer::type_traits::has_push_back_method<T>::value
+                 (!std::is_same_v<T, std::string> &&
+                 jsonifyer::type_traits::has_push_back_method<T>::value)
                  || jsonifyer::type_traits::is_set<T>::value, bool> = true>
     inline auto set(const T& value) -> ::boost::json::value {
         ::boost::json::array arr;
@@ -74,7 +75,7 @@ namespace jsonifyer::serializer {
     inline auto __fill(const T& input, ::boost::json::object& output) -> void {
         if constexpr (I < std::tuple_size_v<T>) {
             const std::string& name = std::tuple_element<I, T>::name;
-            output.emplace(name, std::get<I>(input));
+            output.emplace(name, set<0>(std::get<I>(input)));
             __fill<I+1>(input, output);
         }
     }
