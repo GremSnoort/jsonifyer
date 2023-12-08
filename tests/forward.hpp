@@ -46,10 +46,18 @@ namespace test {
 
     ///////////////////////////////////////////////////////////////////////////////////////////
 
+    template<class T, class I>
+    auto push_symbol(T& output, I sym) {
+        static constexpr char startcode = 'a';
+        static constexpr char endcode = 'z';
+        static constexpr char delta = endcode - startcode;
+        output.push_back(startcode + static_cast<char>(sym % delta));
+    }
+
     auto buildstr(std::size_t sz) -> std::string {
         std::string v;
         for (std::size_t j = 0; j <= sz; ++j) {
-            v.push_back(j % sizeof(char));
+            push_symbol(v, j);
         }
         return v;
     }
@@ -64,7 +72,7 @@ namespace test {
             if constexpr (std::is_same_v<value_t, std::string>) {
                 out.push_back(buildstr(i));
             } else {
-                out.push_back(static_cast<value_t>(i % sizeof(value_t)));
+                push_symbol(out, i);
             }
         }
         return out;

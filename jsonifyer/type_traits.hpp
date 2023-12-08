@@ -1,6 +1,7 @@
 #pragma once
 
 #include <type_traits>
+#include <string>
 
 namespace jsonifyer::type_traits {
 
@@ -63,12 +64,29 @@ namespace jsonifyer::type_traits {
 
     template<class T>
     struct is_map {
-        static constexpr bool value = has_key_type<T>::value && has_mapped_type<T>::value;
+        static constexpr bool value =
+                has_key_type<T>::value && has_mapped_type<T>::value &&
+                (std::is_base_of_v<typename jsonifyer::type_traits::key_type<T>::type, std::string> ||
+                std::is_integral_v<typename jsonifyer::type_traits::key_type<T>::type>);
     };
 
     template<class T>
     struct is_set {
         static constexpr bool value = has_key_type<T>::value && !has_mapped_type<T>::value;
     };
+
+    template<class T>
+    struct is_custom {
+        static constexpr bool value =
+                !std::is_arithmetic_v<T> &&
+                !std::is_same_v<T, std::string> &&
+                !is_map<T>::value &&
+                !is_set<T>::value &&
+                !has_push_back_method<T>::value &&
+                std::is_class_v<T>;
+    };
+
+    template<class T>
+    static constexpr auto is_custom_v = is_custom<T>::value;
 
 }

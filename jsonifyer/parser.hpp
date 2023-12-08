@@ -3,7 +3,7 @@
 #include <fstream>
 #include <sstream>
 
-// sdk
+// internal
 #include <jsonifyer/getters.hpp>
 
 namespace jsonifyer::parser {

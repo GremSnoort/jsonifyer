@@ -16,6 +16,19 @@ namespace example::string {
         std::string _3;
         std::string _4;
 
+        using self_t = strings_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    _0 == other._0 &&
+                    _1 == other._1 &&
+                    _2 == other._2 &&
+                    _3 == other._3 &&
+                    _4 == other._4;
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 

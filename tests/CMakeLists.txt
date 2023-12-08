@@ -29,8 +29,8 @@ include(CTest)
 include(Catch)
 catch_discover_tests(${PROJECT_NAME})
 
-### PROJECT integrals_tests #################################################################################
-set(project integrals_tests)
+### PROJECT complex_tests #################################################################################
+set(project complex_tests)
 
 PROJECT(${project} VERSION "${CMAKE_PROJECT_VERSION}" LANGUAGES CXX)
 
@@ -38,7 +38,7 @@ set(${PROJECT_NAME}_HEADERS
 )
 
 set(${PROJECT_NAME}_SOURCES
-    integrals.cpp
+    complex.cpp
 )
 
 message(STATUS "PROJECT_NAME = ${PROJECT_NAME}")

@@ -39,7 +39,7 @@ namespace jsonifyer::parser {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-                 std::is_fundamental_v<T> &&
+                 std::is_arithmetic_v<T> &&
                  std::is_integral_v<T>, bool> = true>
     __GET_HEADER(T) {
         auto val_ptr = jv.if_int64();
@@ -80,7 +80,7 @@ namespace jsonifyer::parser {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-                 std::is_fundamental_v<T> &&
+                 std::is_arithmetic_v<T> &&
                  std::is_floating_point_v<T>, bool> = true>
     __GET_HEADER(T) {
         auto val_ptr = jv.if_double();
@@ -125,7 +125,7 @@ namespace jsonifyer::parser {
 #define __CUSTOM_CLASS_HEADER(I, T) \
     template<std::size_t I, typename T, \
              std::enable_if_t< \
-                 false == std::is_fundamental_v<T> && \
+                 false == std::is_arithmetic_v<T> && \
                  false == std::is_same_v<T, std::string> && \
                  false == jsonifyer::type_traits::is_map<T>::value && \
                  false == (jsonifyer::type_traits::is_set<T>::value || jsonifyer::type_traits::has_push_back_method<T>::value) && \
@@ -148,9 +148,7 @@ namespace jsonifyer::parser {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-                 jsonifyer::type_traits::is_map<T>::value &&
-                 std::is_base_of_v<typename jsonifyer::type_traits::key_type<T>::type, std::string> ||
-                 std::is_integral_v<typename jsonifyer::type_traits::key_type<T>::type>, bool> = true>
+                 jsonifyer::type_traits::is_map<T>::value, bool> = true>
     __GET_HEADER(T) {
         auto obj_ptr = jv.if_object();
         if (!obj_ptr) {
@@ -190,8 +188,6 @@ namespace jsonifyer::parser {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-///                 !std::is_fundamental_v<T> &&
-///                 !std::is_same_v<T, std::string> &&
                  jsonifyer::type_traits::is_set<T>::value, bool> = true>
     __GET_HEADER(T) {
         auto arr_ptr = jv.if_array();
@@ -226,8 +222,7 @@ namespace jsonifyer::parser {
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
-///                 false == std::is_fundamental_v<T> &&
-///                 false == std::is_same_v<T, std::string> &&
+                 !std::is_same_v<T, std::string> &&
                  jsonifyer::type_traits::has_push_back_method<T>::value, bool> = true>
     __GET_HEADER(T) {
         auto arr_ptr = jv.if_array();
@@ -259,7 +254,11 @@ namespace jsonifyer::parser {
      * @param out_value     - lvalue otuput ref
      * @param error_msg     - lvalue output message string
      */
-    __CUSTOM_CLASS_HEADER(I, T) {
+    ///__CUSTOM_CLASS_HEADER(I, T) {
+    template<std::size_t I, class T,
+             std::enable_if_t<
+                 jsonifyer::type_traits::is_custom_v<T> && I < 1024, bool> = true>
+    __GET_HEADER(T) {
 
         if constexpr (I < std::tuple_size_v<T>) {
             using object_t = T;
