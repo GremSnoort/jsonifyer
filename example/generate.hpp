@@ -81,25 +81,37 @@ namespace example {
 
     template<std::size_t I, class T,
              std::enable_if_t<
+                 jsonifyer::type_traits::is_custom_v<T> && I < 1024, bool> = true>
+    inline auto generate(std::size_t len, T& input) -> void;
+
+    template<std::size_t I, class T,
+             std::enable_if_t<
                  I == 0 &&
                  std::is_fundamental_v<T> &&
                  (std::is_integral_v<T> || std::is_floating_point_v<T>), bool> = true>
     inline auto generate(std::size_t len, T& input) -> void {
-        input = len % sizeof(T);
+        input = std::rand() % sizeof(T);
     }
 
     template<std::size_t I, class T,
              std::enable_if_t<
                  I == 0 &&
+                 std::is_same_v<T, std::string>, bool> = true>
+    inline auto generate(std::size_t len, T& input) -> void {
+        input = buildstr(len);
+    }
+
+    template<std::size_t I, class T,
+             std::enable_if_t<
+                 I == 0 &&
+                 !std::is_same_v<T, std::string> &&
                  jsonifyer::type_traits::has_push_back_method<T>::value, bool> = true>
     inline auto generate(std::size_t len, T& input) -> void {
         using value_t = typename T::value_type;
         for (std::size_t i = 0; i < len; ++i) {
-            if constexpr (std::is_same_v<value_t, std::string>) {
-                input.push_back(buildstr(i));
-            } else {
-                push_symbol(input, i);
-            }
+            value_t v;
+            generate<0>(i, v);
+            input.push_back(v);
         }
     }
 
@@ -110,11 +122,9 @@ namespace example {
     inline auto generate(std::size_t len, T& input) -> void {
         using value_t = typename T::value_type;
         for (std::size_t i = 0; i < len; ++i) {
-            if constexpr (std::is_same_v<value_t, std::string>) {
-                input.emplace(buildstr(i));
-            } else {
-                input.emplace(static_cast<value_t>(i % sizeof(value_t)));
-            }
+            value_t v;
+            generate<0>(i, v);
+            input.emplace(v);
         }
     }
 
@@ -124,26 +134,20 @@ namespace example {
                  jsonifyer::type_traits::is_map<T>::value, bool> = true>
     inline auto generate(std::size_t len, T& input) -> void {
         using value_t = typename T::mapped_type;
-
-        auto emplace = [](std::size_t key, value_t&& value, T& out) {
+        auto emplace = [len](std::size_t key, T& input) {
+            value_t v;
+            generate<0>(len, v);
             if constexpr (std::is_integral_v<typename jsonifyer::type_traits::key_type<T>::type>) {
-                out[key] = std::move(value);
+                input[key] = v;
             } else if constexpr (std::is_base_of_v<typename jsonifyer::type_traits::key_type<T>::type, std::string>) {
-                out[std::to_string(key)] = std::move(value);
+                input[std::to_string(key)] = v;
             }
         };
 
         for (std::size_t i = 0; i < len; ++i) {
-            if constexpr (std::is_same_v<value_t, std::string>) {
-                emplace(i, buildstr(i), input);
-            } else {
-                emplace(i, static_cast<value_t>(i % sizeof(value_t)), input);
-            }
+            emplace(i, input);
         }
     }
-
-    template<class T>
-    inline auto generate(std::size_t len, T& input) -> void;
 
     template<std::size_t I, class T,
              std::enable_if_t<

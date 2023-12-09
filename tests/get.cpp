@@ -1,6 +1,7 @@
 // conan
 #include <catch2/catch_all.hpp>
 
+#include <example/includes/r/metadata.hpp>
 #include <example/includes/integrals.hpp>
 #include <example/includes/strings.hpp>
 #include <example/includes/vectors.hpp>

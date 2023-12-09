@@ -3,6 +3,7 @@
 // conan
 #include <catch2/catch_all.hpp>
 
+#include <example/includes/r/metadata.hpp>
 #include <example/includes/integrals.hpp>
 #include <example/includes/strings.hpp>
 #include <example/includes/vectors.hpp>
@@ -40,6 +41,20 @@ auto check(const T& input) {
 }
 
 TEST_CASE("complex serializer & parser tests") {
+
+    SECTION("r data_t<MONO>") {
+        using type_t = example::real::data_t<example::real::mode_e::MONO>;
+        type_t data;
+        example::generate<0>(5, data);
+        check(data);
+    }
+
+    SECTION("r data_t<ARRAY>") {
+        using type_t = example::real::data_t<example::real::mode_e::ARRAY>;
+        type_t data;
+        example::generate<0>(5, data);
+        check(data);
+    }
 
     SECTION("integral ints_t") {
         using type_t = example::integral::ints_t;
