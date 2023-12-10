@@ -17,7 +17,7 @@ namespace benchmark {
 
     template<std::size_t L, class T>
     void fixture_t<L, T>::SetUp(const ::benchmark::State&) {
-        std::srand(time(nullptr));
+        std::srand(static_cast<unsigned int>(time(nullptr)));
         example::generate<0>(L, internal);
         data = jsonifyer::serializer::serialize(internal);
     }
@@ -32,7 +32,7 @@ namespace benchmark {
     auto process(T& input) -> T {
         T output;
         std::string error;
-        const auto ret = jsonifyer::parser::from_string<T>(
+        [[maybe_unused]] const auto ret = jsonifyer::parser::from_string<T>(
                     jsonifyer::serializer::serialize(input),
                     __func__, output, error);
         return output;
@@ -76,7 +76,7 @@ namespace benchmark {
     PROCESS_F  (fixture_t, unsigned_ints_process, 1024, example::integral::unsigned_ints_t)
     PROCESS_F  (fixture_t, chars_process,         1024, example::integral::chars_t)
     PROCESS_F  (fixture_t, strings_process,         64, example::string::strings_t)
-    /*PROCESS_F  (fixture_t, bool_vectors_process,    16, example::vector::bool_vectors_t)
+    PROCESS_F  (fixture_t, bool_vectors_process,    16, example::vector::bool_vectors_t)
     PROCESS_F  (fixture_t, int_vectors_process,     16, example::vector::int_vectors_t)
     PROCESS_F  (fixture_t, signed_int_vectors_process,   16, example::vector::signed_int_vectors_t)
     PROCESS_F  (fixture_t, unsigned_int_vectors_process, 16, example::vector::unsigned_int_vectors_t)
@@ -87,7 +87,7 @@ namespace benchmark {
     PROCESS_F  (fixture_t, custom_unsigned_int_vectors_process, 16, example::vector::custom_unsigned_int_vectors_t)
     PROCESS_F  (fixture_t, custom_char_vectors_process,  16, example::vector::custom_char_vectors_t)
     PROCESS_F  (fixture_t, custom_float_vectors_process, 16, example::vector::custom_float_vectors_t)
-    PROCESS_F  (fixture_t, custom_mix_vectors_process,   16, example::vector::custom_mix_vectors_t)*/
+///    PROCESS_F  (fixture_t, custom_mix_vectors_process,   16, example::vector::custom_mix_vectors_t)
 
     SERIALIZE_F(fixture_t, data_mono_0_serialize,      0, example::real::data_t<example::real::mode_e::MONO>)
     SERIALIZE_F(fixture_t, data_mono_1_serialize,      1, example::real::data_t<example::real::mode_e::MONO>)
@@ -130,7 +130,7 @@ namespace benchmark {
     PARSE_F    (fixture_t, unsigned_ints_parse, 1024, example::integral::unsigned_ints_t)
     PARSE_F    (fixture_t, chars_parse,         1024, example::integral::chars_t)
     PARSE_F    (fixture_t, strings_parse,         64, example::string::strings_t)
-    /*PARSE_F    (fixture_t, bool_vectors_parse,    16, example::vector::bool_vectors_t)
+    PARSE_F    (fixture_t, bool_vectors_parse,    16, example::vector::bool_vectors_t)
     PARSE_F    (fixture_t, int_vectors_parse,     16, example::vector::int_vectors_t)
     PARSE_F    (fixture_t, signed_int_vectors_parse,   16, example::vector::signed_int_vectors_t)
     PARSE_F    (fixture_t, unsigned_int_vectors_parse, 16, example::vector::unsigned_int_vectors_t)
@@ -141,7 +141,7 @@ namespace benchmark {
     PARSE_F    (fixture_t, custom_unsigned_int_vectors_parse, 16, example::vector::custom_unsigned_int_vectors_t)
     PARSE_F    (fixture_t, custom_char_vectors_parse,  16, example::vector::custom_char_vectors_t)
     PARSE_F    (fixture_t, custom_float_vectors_parse, 16, example::vector::custom_float_vectors_t)
-    PARSE_F    (fixture_t, custom_mix_vectors_parse,   16, example::vector::custom_mix_vectors_t)*/
+///    PARSE_F    (fixture_t, custom_mix_vectors_parse,   16, example::vector::custom_mix_vectors_t)
 
 }
 

@@ -33,7 +33,7 @@ auto parse(const std::string& input, T& output) -> bool {
 template<class T>
 auto check(const T& input) {
     const auto data = jsonifyer::serializer::serialize(input);
-    std::cout << "Serialized:\n" << data << std::endl;
+///    std::cout << "Serialized:\n" << data << std::endl;
 
     T output;
     REQUIRE(parse(data, output) == true);
@@ -85,6 +85,85 @@ TEST_CASE("complex serializer & parser tests") {
 
     SECTION("string strings_t") {
         using type_t = example::string::strings_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    ///////////////////////////////////////////////////////////////
+
+    SECTION("string bool_vectors_t") {
+        using type_t = example::vector::bool_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string int_vectors_t") {
+        using type_t = example::vector::int_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string signed_int_vectors_t") {
+        using type_t = example::vector::signed_int_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string unsigned_int_vectors_t") {
+        using type_t = example::vector::unsigned_int_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string char_vectors_t") {
+        using type_t = example::vector::char_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string string_vectors_t") {
+        using type_t = example::vector::string_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string custom_int_vectors_t") {
+        using type_t = example::vector::custom_int_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string custom_signed_int_vectors_t") {
+        using type_t = example::vector::custom_signed_int_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string custom_unsigned_int_vectors_t") {
+        using type_t = example::vector::custom_unsigned_int_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string custom_char_vectors_t") {
+        using type_t = example::vector::custom_char_vectors_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string custom_float_vectors_t") {
+        using type_t = example::vector::custom_float_vectors_t;
         type_t data;
         example::generate<0>(512, data);
         check(data);

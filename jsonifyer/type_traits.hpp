@@ -31,7 +31,7 @@ namespace jsonifyer::type_traits {
 
     /// https://dev.krzaq.cc/post/checking-whether-a-class-has-a-member-function-with-a-given-signature/
     template<typename T>
-    class has_size_method {
+    struct has_size_method {
 
         template<typename U>
         static auto test(int) -> decltype(std::declval<U>().size() == 1, std::true_type());
@@ -39,7 +39,6 @@ namespace jsonifyer::type_traits {
         template<typename>
         static auto test(...) -> std::false_type;
 
-    public:
         static constexpr bool value = std::is_same<decltype(test<T>(0)), std::true_type>::value;
     };
 
@@ -50,7 +49,7 @@ namespace jsonifyer::type_traits {
      * * deque
      **/
     template<typename T>
-    class has_push_back_method {
+    struct has_push_back_method {
 
         template<typename U>
         static auto test(int) -> decltype(std::declval<U>().push_back({}), std::true_type());
@@ -58,7 +57,6 @@ namespace jsonifyer::type_traits {
         template<typename>
         static auto test(...) -> std::false_type;
 
-    public:
         static constexpr bool value = std::is_same<decltype(test<T>(0)), std::true_type>::value;
     };
 

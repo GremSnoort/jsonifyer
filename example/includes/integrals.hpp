@@ -57,8 +57,8 @@ namespace example::integral {
 
         signed_ints_t() = default;
         signed_ints_t(std::size_t)
-            : _0(std::rand() % INT8_MAX)
-            , _1(std::rand() % INT16_MAX)
+            : _0(static_cast<int8_t>(std::rand() % INT8_MAX))
+            , _1(static_cast<int16_t>(std::rand() % INT16_MAX))
             , _2(std::rand())
             , _3(std::rand())
         {}
@@ -97,8 +97,8 @@ namespace example::integral {
 
         unsigned_ints_t() = default;
         unsigned_ints_t(std::size_t)
-            : _0(static_cast<uint32_t>(std::rand()) % UINT8_MAX)
-            , _1(static_cast<uint32_t>(std::rand()) % UINT16_MAX)
+            : _0(static_cast<uint8_t>(static_cast<uint32_t>(std::rand()) % UINT8_MAX))
+            , _1(static_cast<uint16_t>(static_cast<uint32_t>(std::rand()) % UINT16_MAX))
             , _2(static_cast<uint32_t>(std::rand()))
             , _3(static_cast<uint32_t>(std::rand()))
         {}
@@ -137,10 +137,10 @@ namespace example::integral {
 
         chars_t() = default;
         chars_t(std::size_t)
-            : _0(static_cast<int32_t>(std::rand()) % INT8_MAX)
-            , _1(static_cast<uint32_t>(std::rand()) % UINT16_MAX)
+            : _0(static_cast<char>(static_cast<int32_t>(std::rand()) % INT8_MAX))
+            , _1(static_cast<char16_t>(static_cast<uint32_t>(std::rand()) % UINT16_MAX))
             , _2(static_cast<uint32_t>(std::rand()))
-            , _3(static_cast<uint32_t>(std::rand()) % UINT8_MAX)
+            , _3(static_cast<unsigned char>(static_cast<uint32_t>(std::rand()) % UINT8_MAX))
         {}
 
         using self_t = chars_t;
