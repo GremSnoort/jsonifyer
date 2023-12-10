@@ -148,10 +148,11 @@ namespace example::real {
 namespace std {
 
     TUPLE_GET_IMPL_HEADER(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t) {
-        TUPLE_BRANCH(x, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t) else
-        TUPLE_BRANCH(y, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t) else
-        TUPLE_BRANCH(width, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t) else
-        TUPLE_BRANCH(height, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
+        using type_t = ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t;
+        TUPLE_BRANCH(x,         type_t) else
+        TUPLE_BRANCH(y,         type_t) else
+        TUPLE_BRANCH(width,     type_t) else
+        TUPLE_BRANCH(height,    type_t)
     }
 
     TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
@@ -166,11 +167,12 @@ namespace std {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::real::data_t<example::real::mode_e::MONO>::essential_t) {
-        TUPLE_BRANCH(bbox, ::example::real::data_t<example::real::mode_e::MONO>::essential_t) else
-        TUPLE_BRANCH(score, ::example::real::data_t<example::real::mode_e::MONO>::essential_t) else
-        TUPLE_BRANCH(ssl_class, ::example::real::data_t<example::real::mode_e::MONO>::essential_t) else
-        TUPLE_BRANCH(ufc_class, ::example::real::data_t<example::real::mode_e::MONO>::essential_t) else
-        TUPLE_BRANCH(prn_class, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
+        using type_t = ::example::real::data_t<example::real::mode_e::MONO>::essential_t;
+        TUPLE_BRANCH(bbox,      type_t) else
+        TUPLE_BRANCH(score,     type_t) else
+        TUPLE_BRANCH(ssl_class, type_t) else
+        TUPLE_BRANCH(ufc_class, type_t) else
+        TUPLE_BRANCH(prn_class, type_t)
     }
 
     TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t)
@@ -186,12 +188,13 @@ namespace std {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::real::data_t<example::real::mode_e::MONO>) {
-        TUPLE_BRANCH(object_id, ::example::real::data_t<example::real::mode_e::MONO>) else
-        TUPLE_BRANCH(packt_idx, ::example::real::data_t<example::real::mode_e::MONO>) else
-        TUPLE_BRANCH(timestamp, ::example::real::data_t<example::real::mode_e::MONO>) else
-        TUPLE_BRANCH(iunit_width, ::example::real::data_t<example::real::mode_e::MONO>) else
-        TUPLE_BRANCH(iunit_height, ::example::real::data_t<example::real::mode_e::MONO>) else
-        TUPLE_BRANCH(detections, ::example::real::data_t<example::real::mode_e::MONO>)
+        using type_t = ::example::real::data_t<example::real::mode_e::MONO>;
+        TUPLE_BRANCH(object_id,     type_t) else
+        TUPLE_BRANCH(packt_idx,     type_t) else
+        TUPLE_BRANCH(timestamp,     type_t) else
+        TUPLE_BRANCH(iunit_width,   type_t) else
+        TUPLE_BRANCH(iunit_height,  type_t) else
+        TUPLE_BRANCH(detections,    type_t)
     }
 
     TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>)

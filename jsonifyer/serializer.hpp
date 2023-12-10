@@ -7,8 +7,9 @@ namespace jsonifyer::serializer {
 
     template<class T>
     inline auto serialize(const T& input) -> std::string {
-        auto output = jsonifyer::serializer::set<0>(input);
-        return ::boost::json::serialize(output);
+        std::string output;
+        jsonifyer::serializer::add<0>(input, "", [&output](::boost::json::value&& jv, const std::string&) { output = ::boost::json::serialize(jv); });
+        return output;
     }
 
 }

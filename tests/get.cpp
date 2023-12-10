@@ -268,6 +268,21 @@ TEST_CASE("std::get test") {
         check_5_custom<type_t>();
     }
 
+    SECTION("vector custom_float_v_vectors_t") {
+        using type_t = example::vector::custom_float_v_vectors_t;
+        check_5_custom<type_t>();
+    }
+
+    SECTION("vector custom_float_s_vectors_t") {
+        using type_t = example::vector::custom_float_s_vectors_t;
+        check_5_custom<type_t>();
+    }
+
+    SECTION("vector custom_float_m_vectors_t") {
+        using type_t = example::vector::custom_float_m_vectors_t;
+        check_5_custom<type_t>();
+    }
+
     /////////////////////////////////////////////////////////////////////////////
 
     SECTION("list bool_lists_t") {
@@ -333,6 +348,16 @@ TEST_CASE("std::get test") {
 
     SECTION("list custom_mix_lists_t") {
         using type_t = example::list::custom_mix_lists_t;
+        check_5_custom<type_t>();
+    }
+
+    SECTION("list custom_float_l_lists_t") {
+        using type_t = example::list::custom_float_l_lists_t;
+        check_5_custom<type_t>();
+    }
+
+    SECTION("list custom_float_s_lists_t") {
+        using type_t = example::list::custom_float_s_lists_t;
         check_5_custom<type_t>();
     }
 

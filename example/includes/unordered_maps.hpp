@@ -190,11 +190,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::int_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::int_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::int_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::int_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::int_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::int_unordered_maps_t)
+        using type_t = ::example::unordered_map::int_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::int_unordered_maps_t)
@@ -210,10 +211,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::signed_int_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::signed_int_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::signed_int_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::signed_int_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::signed_int_unordered_maps_t)
+        using type_t = ::example::unordered_map::signed_int_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::signed_int_unordered_maps_t)
@@ -228,10 +230,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::unsigned_int_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::unsigned_int_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::unsigned_int_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::unsigned_int_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::unsigned_int_unordered_maps_t)
+        using type_t = ::example::unordered_map::unsigned_int_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::unsigned_int_unordered_maps_t)
@@ -246,10 +249,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::char_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::char_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::char_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::char_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::char_unordered_maps_t)
+        using type_t = ::example::unordered_map::char_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::char_unordered_maps_t)
@@ -264,11 +268,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::string_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::string_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::string_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::string_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::string_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::string_unordered_maps_t)
+        using type_t = ::example::unordered_map::string_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::string_unordered_maps_t)
@@ -284,11 +289,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::custom_int_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::custom_int_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::custom_int_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::custom_int_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::custom_int_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::custom_int_unordered_maps_t)
+        using type_t = ::example::unordered_map::custom_int_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::custom_int_unordered_maps_t)
@@ -304,11 +310,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::custom_signed_int_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::custom_signed_int_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::custom_signed_int_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::custom_signed_int_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::custom_signed_int_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::custom_signed_int_unordered_maps_t)
+        using type_t = ::example::unordered_map::custom_signed_int_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::custom_signed_int_unordered_maps_t)
@@ -324,11 +331,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::custom_unsigned_int_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::custom_unsigned_int_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::custom_unsigned_int_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::custom_unsigned_int_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::custom_unsigned_int_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::custom_unsigned_int_unordered_maps_t)
+        using type_t = ::example::unordered_map::custom_unsigned_int_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::custom_unsigned_int_unordered_maps_t)
@@ -344,11 +352,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::custom_char_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::custom_char_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::custom_char_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::custom_char_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::custom_char_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::custom_char_unordered_maps_t)
+        using type_t = ::example::unordered_map::custom_char_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::custom_char_unordered_maps_t)
@@ -364,11 +373,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::custom_float_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::custom_float_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::custom_float_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::custom_float_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::custom_float_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::custom_float_unordered_maps_t)
+        using type_t = ::example::unordered_map::custom_float_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::custom_float_unordered_maps_t)
@@ -384,11 +394,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::unordered_map::custom_mix_unordered_maps_t) {
-        TUPLE_BRANCH(_0, ::example::unordered_map::custom_mix_unordered_maps_t) else
-        TUPLE_BRANCH(_1, ::example::unordered_map::custom_mix_unordered_maps_t) else
-        TUPLE_BRANCH(_2, ::example::unordered_map::custom_mix_unordered_maps_t) else
-        TUPLE_BRANCH(_3, ::example::unordered_map::custom_mix_unordered_maps_t) else
-        TUPLE_BRANCH(_4, ::example::unordered_map::custom_mix_unordered_maps_t)
+        using type_t = ::example::unordered_map::custom_mix_unordered_maps_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::unordered_map::custom_mix_unordered_maps_t)

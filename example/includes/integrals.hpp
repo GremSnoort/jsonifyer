@@ -204,11 +204,12 @@ namespace example::integral {
 namespace std {
 
     TUPLE_GET_IMPL_HEADER(::example::integral::ints_t) {
-        TUPLE_BRANCH(_0, ::example::integral::ints_t) else
-        TUPLE_BRANCH(_1, ::example::integral::ints_t) else
-        TUPLE_BRANCH(_2, ::example::integral::ints_t) else
-        TUPLE_BRANCH(_3, ::example::integral::ints_t) else
-        TUPLE_BRANCH(_4, ::example::integral::ints_t)
+        using type_t = ::example::integral::ints_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::integral::ints_t)
@@ -224,10 +225,11 @@ namespace std {
     /////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::integral::signed_ints_t) {
-        TUPLE_BRANCH(_0, ::example::integral::signed_ints_t) else
-        TUPLE_BRANCH(_1, ::example::integral::signed_ints_t) else
-        TUPLE_BRANCH(_2, ::example::integral::signed_ints_t) else
-        TUPLE_BRANCH(_3, ::example::integral::signed_ints_t)
+        using type_t = ::example::integral::signed_ints_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::integral::signed_ints_t)
@@ -242,10 +244,11 @@ namespace std {
     /////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::integral::unsigned_ints_t) {
-        TUPLE_BRANCH(_0, ::example::integral::unsigned_ints_t) else
-        TUPLE_BRANCH(_1, ::example::integral::unsigned_ints_t) else
-        TUPLE_BRANCH(_2, ::example::integral::unsigned_ints_t) else
-        TUPLE_BRANCH(_3, ::example::integral::unsigned_ints_t)
+        using type_t = ::example::integral::unsigned_ints_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::integral::unsigned_ints_t)
@@ -260,10 +263,11 @@ namespace std {
     /////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::integral::chars_t) {
-        TUPLE_BRANCH(_0, ::example::integral::chars_t) else
-        TUPLE_BRANCH(_1, ::example::integral::chars_t) else
-        TUPLE_BRANCH(_2, ::example::integral::chars_t) else
-        TUPLE_BRANCH(_3, ::example::integral::chars_t)
+        using type_t = ::example::integral::chars_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::integral::chars_t)
@@ -278,8 +282,9 @@ namespace std {
     /////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::integral::floats_t) {
-        TUPLE_BRANCH(_0, ::example::integral::floats_t) else
-        TUPLE_BRANCH(_1, ::example::integral::floats_t)
+        using type_t = ::example::integral::floats_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t)
     }
 
     TUPLE_DEFINE(::example::integral::floats_t)

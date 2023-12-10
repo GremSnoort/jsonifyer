@@ -1,6 +1,7 @@
 #pragma once
 
 #include <list>
+#include <set>
 
 #include <example/includes/integrals.hpp>
 #include <example/includes/strings.hpp>
@@ -171,6 +172,36 @@ namespace example::list {
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
+    /**
+     * @brief custom float list list-s struct
+     */
+    struct custom_float_l_lists_t {
+        using type_t = example::integral::floats_t;
+        using iternal_t = std::list<std::list<type_t>>;
+        iternal_t _0;
+        iternal_t _1;
+        iternal_t _2;
+        iternal_t _3;
+        iternal_t _4;
+
+        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+    };
+
+    /**
+     * @brief custom float set list-s struct
+     */
+    struct custom_float_s_lists_t {
+        using type_t = example::integral::floats_t;
+        using iternal_t = std::list<std::set<type_t>>;
+        iternal_t _0;
+        iternal_t _1;
+        iternal_t _2;
+        iternal_t _3;
+        iternal_t _4;
+
+        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+    };
+
 }
 
 namespace std {
@@ -188,11 +219,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::int_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::int_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::int_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::int_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::int_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::int_lists_t)
+        using type_t = ::example::list::int_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::int_lists_t)
@@ -208,10 +240,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::signed_int_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::signed_int_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::signed_int_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::signed_int_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::signed_int_lists_t)
+        using type_t = ::example::list::signed_int_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::list::signed_int_lists_t)
@@ -226,10 +259,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::unsigned_int_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::unsigned_int_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::unsigned_int_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::unsigned_int_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::unsigned_int_lists_t)
+        using type_t = ::example::list::unsigned_int_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::list::unsigned_int_lists_t)
@@ -244,10 +278,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::char_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::char_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::char_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::char_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::char_lists_t)
+        using type_t = ::example::list::char_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::list::char_lists_t)
@@ -262,11 +297,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::string_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::string_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::string_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::string_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::string_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::string_lists_t)
+        using type_t = ::example::list::string_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::string_lists_t)
@@ -282,11 +318,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::custom_int_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::custom_int_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::custom_int_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::custom_int_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::custom_int_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::custom_int_lists_t)
+        using type_t = ::example::list::custom_int_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::custom_int_lists_t)
@@ -302,11 +339,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::custom_signed_int_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::custom_signed_int_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::custom_signed_int_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::custom_signed_int_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::custom_signed_int_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::custom_signed_int_lists_t)
+        using type_t = ::example::list::custom_signed_int_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::custom_signed_int_lists_t)
@@ -322,11 +360,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::custom_unsigned_int_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::custom_unsigned_int_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::custom_unsigned_int_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::custom_unsigned_int_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::custom_unsigned_int_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::custom_unsigned_int_lists_t)
+        using type_t = ::example::list::custom_unsigned_int_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::custom_unsigned_int_lists_t)
@@ -342,11 +381,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::custom_char_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::custom_char_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::custom_char_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::custom_char_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::custom_char_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::custom_char_lists_t)
+        using type_t = ::example::list::custom_char_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::custom_char_lists_t)
@@ -362,11 +402,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::custom_float_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::custom_float_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::custom_float_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::custom_float_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::custom_float_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::custom_float_lists_t)
+        using type_t = ::example::list::custom_float_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::custom_float_lists_t)
@@ -382,11 +423,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::list::custom_mix_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::custom_mix_lists_t) else
-        TUPLE_BRANCH(_1, ::example::list::custom_mix_lists_t) else
-        TUPLE_BRANCH(_2, ::example::list::custom_mix_lists_t) else
-        TUPLE_BRANCH(_3, ::example::list::custom_mix_lists_t) else
-        TUPLE_BRANCH(_4, ::example::list::custom_mix_lists_t)
+        using type_t = ::example::list::custom_mix_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::list::custom_mix_lists_t)
@@ -398,5 +440,47 @@ namespace std {
     TUPLE_ELEMENT(_4, ::example::list::custom_mix_lists_t)
 
     TUPLE_GETS(::example::list::custom_mix_lists_t)
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    TUPLE_GET_IMPL_HEADER(::example::list::custom_float_l_lists_t) {
+        using type_t = ::example::list::custom_float_l_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
+    }
+
+    TUPLE_DEFINE(::example::list::custom_float_l_lists_t)
+
+    TUPLE_ELEMENT(_0, ::example::list::custom_float_l_lists_t)
+    TUPLE_ELEMENT(_1, ::example::list::custom_float_l_lists_t)
+    TUPLE_ELEMENT(_2, ::example::list::custom_float_l_lists_t)
+    TUPLE_ELEMENT(_3, ::example::list::custom_float_l_lists_t)
+    TUPLE_ELEMENT(_4, ::example::list::custom_float_l_lists_t)
+
+    TUPLE_GETS(::example::list::custom_float_l_lists_t)
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    TUPLE_GET_IMPL_HEADER(::example::list::custom_float_s_lists_t) {
+        using type_t = ::example::list::custom_float_s_lists_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
+    }
+
+    TUPLE_DEFINE(::example::list::custom_float_s_lists_t)
+
+    TUPLE_ELEMENT(_0, ::example::list::custom_float_s_lists_t)
+    TUPLE_ELEMENT(_1, ::example::list::custom_float_s_lists_t)
+    TUPLE_ELEMENT(_2, ::example::list::custom_float_s_lists_t)
+    TUPLE_ELEMENT(_3, ::example::list::custom_float_s_lists_t)
+    TUPLE_ELEMENT(_4, ::example::list::custom_float_s_lists_t)
+
+    TUPLE_GETS(::example::list::custom_float_s_lists_t)
 
 }

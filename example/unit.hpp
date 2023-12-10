@@ -32,10 +32,11 @@ namespace std {
     **/
 
     TUPLE_GET_IMPL_HEADER(::minimal::unit_t) {
-        TUPLE_BRANCH(_0, ::minimal::unit_t) else
-        TUPLE_BRANCH(_1, ::minimal::unit_t) else
-        TUPLE_BRANCH(_2, ::minimal::unit_t) else
-        TUPLE_BRANCH(_3, ::minimal::unit_t)
+        using type_t = ::minimal::unit_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::minimal::unit_t)

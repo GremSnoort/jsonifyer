@@ -37,11 +37,12 @@ namespace example::string {
 namespace std {
 
     TUPLE_GET_IMPL_HEADER(::example::string::strings_t) {
-        TUPLE_BRANCH(_0, ::example::string::strings_t) else
-        TUPLE_BRANCH(_1, ::example::string::strings_t) else
-        TUPLE_BRANCH(_2, ::example::string::strings_t) else
-        TUPLE_BRANCH(_3, ::example::string::strings_t) else
-        TUPLE_BRANCH(_4, ::example::string::strings_t)
+        using type_t = ::example::string::strings_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::string::strings_t)

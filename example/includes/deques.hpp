@@ -188,11 +188,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::int_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::int_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::int_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::int_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::int_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::int_deques_t)
+        using type_t = ::example::deque::int_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::int_deques_t)
@@ -208,10 +209,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::signed_int_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::signed_int_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::signed_int_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::signed_int_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::signed_int_deques_t)
+        using type_t = ::example::deque::signed_int_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::signed_int_deques_t)
@@ -226,10 +228,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::unsigned_int_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::unsigned_int_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::unsigned_int_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::unsigned_int_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::unsigned_int_deques_t)
+        using type_t = ::example::deque::unsigned_int_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::unsigned_int_deques_t)
@@ -244,10 +247,11 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::char_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::char_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::char_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::char_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::char_deques_t)
+        using type_t = ::example::deque::char_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::char_deques_t)
@@ -262,11 +266,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::string_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::string_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::string_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::string_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::string_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::string_deques_t)
+        using type_t = ::example::deque::string_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::string_deques_t)
@@ -282,11 +287,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::custom_int_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::custom_int_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::custom_int_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::custom_int_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::custom_int_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::custom_int_deques_t)
+        using type_t = ::example::deque::custom_int_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::custom_int_deques_t)
@@ -302,11 +308,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::custom_signed_int_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::custom_signed_int_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::custom_signed_int_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::custom_signed_int_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::custom_signed_int_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::custom_signed_int_deques_t)
+        using type_t = ::example::deque::custom_signed_int_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::custom_signed_int_deques_t)
@@ -322,11 +329,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::custom_unsigned_int_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::custom_unsigned_int_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::custom_unsigned_int_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::custom_unsigned_int_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::custom_unsigned_int_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::custom_unsigned_int_deques_t)
+        using type_t = ::example::deque::custom_unsigned_int_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::custom_unsigned_int_deques_t)
@@ -342,11 +350,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::custom_char_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::custom_char_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::custom_char_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::custom_char_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::custom_char_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::custom_char_deques_t)
+        using type_t = ::example::deque::custom_char_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::custom_char_deques_t)
@@ -362,11 +371,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::custom_float_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::custom_float_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::custom_float_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::custom_float_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::custom_float_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::custom_float_deques_t)
+        using type_t = ::example::deque::custom_float_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::custom_float_deques_t)
@@ -382,11 +392,12 @@ namespace std {
     ///////////////////////////////////////////////////////////////////////////////
 
     TUPLE_GET_IMPL_HEADER(::example::deque::custom_mix_deques_t) {
-        TUPLE_BRANCH(_0, ::example::deque::custom_mix_deques_t) else
-        TUPLE_BRANCH(_1, ::example::deque::custom_mix_deques_t) else
-        TUPLE_BRANCH(_2, ::example::deque::custom_mix_deques_t) else
-        TUPLE_BRANCH(_3, ::example::deque::custom_mix_deques_t) else
-        TUPLE_BRANCH(_4, ::example::deque::custom_mix_deques_t)
+        using type_t = ::example::deque::custom_mix_deques_t;
+        TUPLE_BRANCH(_0, type_t) else
+        TUPLE_BRANCH(_1, type_t) else
+        TUPLE_BRANCH(_2, type_t) else
+        TUPLE_BRANCH(_3, type_t) else
+        TUPLE_BRANCH(_4, type_t)
     }
 
     TUPLE_DEFINE(::example::deque::custom_mix_deques_t)
