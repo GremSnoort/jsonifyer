@@ -31,7 +31,7 @@ namespace jsonifyer::parser {
         return jsonifyer::parser::get<0, Class>(
                     jv,
                     filename,
-                    static_cast<const std::string&>(typeid(Class).name()),
+                    std::tuple_name<Class>::name,
                     out_value,
                     error_msg);
     }
