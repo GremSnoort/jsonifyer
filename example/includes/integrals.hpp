@@ -87,6 +87,47 @@ namespace example::integral {
         DEFINE_ID_CLASS(int, (_5) (_6) (_7) (_8) (_9) (COUNT))
     };
 
+    struct ints_inherited_2_t : public ints_inherited_t {
+        int _10;
+        int _11;
+        int _12;
+        int _13;
+        int _14;
+
+        ints_inherited_2_t() = default;
+        ints_inherited_2_t(std::size_t sz)
+            : ints_inherited_t(sz)
+            , _10(std::rand())
+            , _11(std::rand())
+            , _12(std::rand())
+            , _13(std::rand())
+            , _14(std::rand())
+        {}
+
+        using self_t = ints_inherited_2_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    this->ints_inherited_t::operator==(other) &&
+                    _10 == other._10 &&
+                    _11 == other._11 &&
+                    _12 == other._12 &&
+                    _13 == other._13 &&
+                    _14 == other._14;
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
+        inline bool operator<(const self_t& other) const {
+            return _0 < other._0;
+        }
+        inline bool operator<(self_t& other) const {
+            return operator<(static_cast<const self_t&>(other));
+        }
+
+        DEFINE_ID_CLASS(int, (_10) (_11) (_12) (_13) (_14) (COUNT))
+    };
+
     /**
      * @brief signed int-s struct
      */
@@ -283,6 +324,27 @@ namespace std {
     TUPLE_ELEMENT(_9, ::example::integral::ints_inherited_t)
 
     TUPLE_GETS(::example::integral::ints_inherited_t)
+
+    /////////////////////////////////////////////////////
+
+    TUPLE_GET_IMPL_HEADER(::example::integral::ints_inherited_2_t) {
+        using type_t = ::example::integral::ints_inherited_2_t;
+        TUPLE_BRANCH(_10, type_t) else
+        TUPLE_BRANCH(_11, type_t) else
+        TUPLE_BRANCH(_12, type_t) else
+        TUPLE_BRANCH(_13, type_t) else
+        TUPLE_BRANCH(_14, type_t)
+    }
+
+    TUPLE_DEFINE(::example::integral::ints_inherited_2_t, ::example::integral::ints_inherited_t)
+
+    TUPLE_ELEMENT(_10, ::example::integral::ints_inherited_2_t)
+    TUPLE_ELEMENT(_11, ::example::integral::ints_inherited_2_t)
+    TUPLE_ELEMENT(_12, ::example::integral::ints_inherited_2_t)
+    TUPLE_ELEMENT(_13, ::example::integral::ints_inherited_2_t)
+    TUPLE_ELEMENT(_14, ::example::integral::ints_inherited_2_t)
+
+    TUPLE_GETS(::example::integral::ints_inherited_2_t)
 
     /////////////////////////////////////////////////////
 

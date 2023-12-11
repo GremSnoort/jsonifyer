@@ -61,6 +61,16 @@ TEST_CASE("complex serializer & parser tests") {
         check(type_t(0));
     }
 
+    SECTION("integral ints_inherited_t") {
+        using type_t = example::integral::ints_inherited_t;
+        check(type_t(0));
+    }
+
+    SECTION("integral ints_inherited_2_t") {
+        using type_t = example::integral::ints_inherited_2_t;
+        check(type_t(0));
+    }
+
     SECTION("integral signed_ints_t") {
         using type_t = example::integral::signed_ints_t;
         check(type_t(0));
@@ -85,6 +95,20 @@ TEST_CASE("complex serializer & parser tests") {
 
     SECTION("string strings_t") {
         using type_t = example::string::strings_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string strings_inherited_t") {
+        using type_t = example::string::strings_inherited_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("string strings_inherited_2_t") {
+        using type_t = example::string::strings_inherited_2_t;
         type_t data;
         example::generate<0>(512, data);
         check(data);
@@ -168,4 +192,5 @@ TEST_CASE("complex serializer & parser tests") {
         example::generate<0>(512, data);
         check(data);
     }
+
 }

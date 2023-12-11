@@ -38,12 +38,10 @@ namespace jsonifyer::parser {
              /// INTEGRAL ================================================================>=====>>>
         if constexpr (I == 0 && std::is_arithmetic_v<T> && std::is_integral_v<T>) {
 
-            auto val_ptr = jv.if_int64();
-            if (!val_ptr) {
-                auto val_uptr = jv.if_uint64();
-                if (!val_uptr) {
-                    auto val_bptr = jv.if_bool();
-                    if (!val_bptr) {
+            if (auto val_ptr = jv.if_int64(); !val_ptr) {
+                if (auto val_uptr = jv.if_uint64(); !val_uptr) {
+                    if (auto val_bptr = jv.if_bool(); !val_bptr) {
+
                         error_msg = fmt::format(
                                     "!!! JSON Object '{}' contains invalid field '{}' value: '{}', need int64/uint64 or bool !!!",
                                     object_name, field, ::boost::json::serialize(jv));
@@ -167,6 +165,11 @@ namespace jsonifyer::parser {
         } else
              /// CUSTOM STRUCTS ================================================================>>>
         if constexpr (jsonifyer::type_traits::is_custom_v<T> && I < 1024) {
+
+            using base_t = typename std::tuple_name<T>::base_t;
+            if constexpr (I == 0 && !std::is_same_v<base_t, void>) { /// has base class
+                jsonifyer::parser::get<I, base_t>(jv, object_name, field, out_value, error_msg);
+            }
 
             if constexpr (I < std::tuple_size_v<T>) {
                 using object_t = T;
