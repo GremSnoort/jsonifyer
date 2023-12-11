@@ -5,6 +5,7 @@
 #include <map>
 #include <cstring>
 
+#include <example/includes/tools.hpp>
 #include <example/includes/integrals.hpp>
 #include <example/includes/strings.hpp>
 
@@ -45,11 +46,11 @@ namespace example::vector {
         using self_t = int_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    _0.size() == other._0.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_0.data()), reinterpret_cast<const void*>(other._0.data()), _0.size()) &&
-                    _1.size() == other._1.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_1.data()), reinterpret_cast<const void*>(other._1.data()), _1.size()) &&
-                    _2.size() == other._2.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_2.data()), reinterpret_cast<const void*>(other._2.data()), _2.size()) &&
-                    _3.size() == other._3.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_3.data()), reinterpret_cast<const void*>(other._3.data()), _3.size()) &&
-                    _4.size() == other._4.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_4.data()), reinterpret_cast<const void*>(other._4.data()), _4.size());
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -70,10 +71,10 @@ namespace example::vector {
         using self_t = signed_int_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    _0.size() == other._0.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_0.data()), reinterpret_cast<const void*>(other._0.data()), _0.size()) &&
-                    _1.size() == other._1.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_1.data()), reinterpret_cast<const void*>(other._1.data()), _1.size()) &&
-                    _2.size() == other._2.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_2.data()), reinterpret_cast<const void*>(other._2.data()), _2.size()) &&
-                    _3.size() == other._3.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_3.data()), reinterpret_cast<const void*>(other._3.data()), _3.size());
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -94,10 +95,10 @@ namespace example::vector {
         using self_t = unsigned_int_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    _0.size() == other._0.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_0.data()), reinterpret_cast<const void*>(other._0.data()), _0.size()) &&
-                    _1.size() == other._1.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_1.data()), reinterpret_cast<const void*>(other._1.data()), _1.size()) &&
-                    _2.size() == other._2.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_2.data()), reinterpret_cast<const void*>(other._2.data()), _2.size()) &&
-                    _3.size() == other._3.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_3.data()), reinterpret_cast<const void*>(other._3.data()), _3.size());
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -118,10 +119,10 @@ namespace example::vector {
         using self_t = char_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    _0.size() == other._0.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_0.data()), reinterpret_cast<const void*>(other._0.data()), _0.size()) &&
-                    _1.size() == other._1.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_1.data()), reinterpret_cast<const void*>(other._1.data()), _1.size()) &&
-                    _2.size() == other._2.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_2.data()), reinterpret_cast<const void*>(other._2.data()), _2.size()) &&
-                    _3.size() == other._3.size() && 0 == std::memcmp(reinterpret_cast<const void*>(_3.data()), reinterpret_cast<const void*>(other._3.data()), _3.size());
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -129,23 +130,6 @@ namespace example::vector {
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
-
-    template<class T>
-    auto compare(const T& l, const T& r) -> bool {
-        if (l.size() == r.size()) {
-            auto lit = l.begin();
-            auto rit = r.begin();
-            while (lit != l.end() && rit != r.end()) {
-                if (!(*lit == *rit)) {
-                    return false;
-                }
-                lit++;
-                rit++;
-            }
-            return true;
-        }
-        return false;
-    }
 
     /**
      * @brief simple string vector-s struct
@@ -161,11 +145,11 @@ namespace example::vector {
         using self_t = string_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    compare(_0, other._0) &&
-                    compare(_1, other._1) &&
-                    compare(_2, other._2) &&
-                    compare(_3, other._3) &&
-                    compare(_4, other._4);
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -189,11 +173,11 @@ namespace example::vector {
         using self_t = custom_int_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    compare(_0, other._0) &&
-                    compare(_1, other._1) &&
-                    compare(_2, other._2) &&
-                    compare(_3, other._3) &&
-                    compare(_4, other._4);
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -217,11 +201,11 @@ namespace example::vector {
         using self_t = custom_signed_int_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    compare(_0, other._0) &&
-                    compare(_1, other._1) &&
-                    compare(_2, other._2) &&
-                    compare(_3, other._3) &&
-                    compare(_4, other._4);
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -245,11 +229,11 @@ namespace example::vector {
         using self_t = custom_unsigned_int_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    compare(_0, other._0) &&
-                    compare(_1, other._1) &&
-                    compare(_2, other._2) &&
-                    compare(_3, other._3) &&
-                    compare(_4, other._4);
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -273,11 +257,11 @@ namespace example::vector {
         using self_t = custom_char_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    compare(_0, other._0) &&
-                    compare(_1, other._1) &&
-                    compare(_2, other._2) &&
-                    compare(_3, other._3) &&
-                    compare(_4, other._4);
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -301,11 +285,11 @@ namespace example::vector {
         using self_t = custom_float_vectors_t;
         inline bool operator==(const self_t& other) const {
             return
-                    compare(_0, other._0) &&
-                    compare(_1, other._1) &&
-                    compare(_2, other._2) &&
-                    compare(_3, other._3) &&
-                    compare(_4, other._4);
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
         }
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
@@ -324,6 +308,19 @@ namespace example::vector {
         std::vector<example::integral::chars_t> _3;
         std::vector<example::integral::floats_t> _4;
 
+        using self_t = custom_mix_vectors_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -338,6 +335,19 @@ namespace example::vector {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = custom_float_v_vectors_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare2(_0, other._0) &&
+                    example::tools::compare2(_1, other._1) &&
+                    example::tools::compare2(_2, other._2) &&
+                    example::tools::compare2(_3, other._3) &&
+                    example::tools::compare2(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
@@ -354,6 +364,19 @@ namespace example::vector {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = custom_float_s_vectors_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare2(_0, other._0) &&
+                    example::tools::compare2(_1, other._1) &&
+                    example::tools::compare2(_2, other._2) &&
+                    example::tools::compare2(_3, other._3) &&
+                    example::tools::compare2(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -368,6 +391,19 @@ namespace example::vector {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = custom_float_m_vectors_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare2(_0, other._0) &&
+                    example::tools::compare2(_1, other._1) &&
+                    example::tools::compare2(_2, other._2) &&
+                    example::tools::compare2(_3, other._3) &&
+                    example::tools::compare2(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };

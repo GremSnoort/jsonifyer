@@ -2,6 +2,7 @@
 
 #include <set>
 
+#include <example/includes/tools.hpp>
 #include <example/includes/integrals.hpp>
 #include <example/includes/strings.hpp>
 
@@ -15,6 +16,15 @@ namespace example::set {
     struct bool_sets_t {
         using iternal_t = std::set<bool>;
         iternal_t _0;
+
+        using self_t = bool_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (COUNT))
     };
@@ -30,6 +40,19 @@ namespace example::set {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = int_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -41,6 +64,18 @@ namespace example::set {
         std::set<int16_t> _1;
         std::set<int32_t> _2;
         std::set<int64_t> _3;
+
+        using self_t = signed_int_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
@@ -54,6 +89,18 @@ namespace example::set {
         std::set<uint32_t> _2;
         std::set<uint64_t> _3;
 
+        using self_t = unsigned_int_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
@@ -65,6 +112,18 @@ namespace example::set {
         std::set<char16_t> _1;
         std::set<char32_t> _2;
         std::set<unsigned char> _3;
+
+        using self_t = char_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
@@ -79,6 +138,19 @@ namespace example::set {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = string_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
@@ -95,6 +167,19 @@ namespace example::set {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = custom_int_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -109,6 +194,19 @@ namespace example::set {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = custom_signed_int_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
@@ -125,6 +223,19 @@ namespace example::set {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = custom_unsigned_int_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -139,6 +250,19 @@ namespace example::set {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = custom_char_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
@@ -155,6 +279,19 @@ namespace example::set {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = custom_float_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -167,6 +304,19 @@ namespace example::set {
         std::set<example::integral::unsigned_ints_t> _2;
         std::set<example::integral::chars_t> _3;
         std::set<example::integral::floats_t> _4;
+
+        using self_t = custom_mix_sets_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare(_0, other._0) &&
+                    example::tools::compare(_1, other._1) &&
+                    example::tools::compare(_2, other._2) &&
+                    example::tools::compare(_3, other._3) &&
+                    example::tools::compare(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
