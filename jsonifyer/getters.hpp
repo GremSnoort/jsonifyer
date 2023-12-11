@@ -185,10 +185,10 @@ namespace jsonifyer::parser {
                 }
                 const std::string& f = std::tuple_element<I, object_t>::name;
                 if (!obj->contains(f)) {
-                  error_msg = fmt::format(
+                    error_msg = fmt::format(
                               "!!! JSON Object '{}' does not contain '{}' field: {} !!!",
                               object_name, f, ::boost::json::serialize(*obj));
-                  return false;
+                    return false;
                 }
                 if (jsonifyer::parser::get<0, typename std::tuple_element<I, T>::type>(
                     obj->at(f), field, f, std::get<I>(out_value), error_msg)) {
