@@ -179,7 +179,7 @@ namespace std {
         TUPLE_BRANCH(_0, ::example::set::bool_sets_t)
     }
 
-    TUPLE_DEFINE(::example::set::bool_sets_t)
+    TUPLE_DEFINE(::example::set::bool_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::bool_sets_t)
 
@@ -196,7 +196,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::int_sets_t)
+    TUPLE_DEFINE(::example::set::int_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::int_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::int_sets_t)
@@ -216,7 +216,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::signed_int_sets_t)
+    TUPLE_DEFINE(::example::set::signed_int_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::signed_int_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::signed_int_sets_t)
@@ -235,7 +235,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::unsigned_int_sets_t)
+    TUPLE_DEFINE(::example::set::unsigned_int_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::unsigned_int_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::unsigned_int_sets_t)
@@ -254,7 +254,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::char_sets_t)
+    TUPLE_DEFINE(::example::set::char_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::char_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::char_sets_t)
@@ -274,7 +274,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::string_sets_t)
+    TUPLE_DEFINE(::example::set::string_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::string_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::string_sets_t)
@@ -295,7 +295,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::custom_int_sets_t)
+    TUPLE_DEFINE(::example::set::custom_int_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::custom_int_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::custom_int_sets_t)
@@ -316,7 +316,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::custom_signed_int_sets_t)
+    TUPLE_DEFINE(::example::set::custom_signed_int_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::custom_signed_int_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::custom_signed_int_sets_t)
@@ -337,7 +337,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::custom_unsigned_int_sets_t)
+    TUPLE_DEFINE(::example::set::custom_unsigned_int_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::custom_unsigned_int_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::custom_unsigned_int_sets_t)
@@ -358,7 +358,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::custom_char_sets_t)
+    TUPLE_DEFINE(::example::set::custom_char_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::custom_char_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::custom_char_sets_t)
@@ -379,7 +379,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::custom_float_sets_t)
+    TUPLE_DEFINE(::example::set::custom_float_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::custom_float_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::custom_float_sets_t)
@@ -400,7 +400,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::set::custom_mix_sets_t)
+    TUPLE_DEFINE(::example::set::custom_mix_sets_t, void)
 
     TUPLE_ELEMENT(_0, ::example::set::custom_mix_sets_t)
     TUPLE_ELEMENT(_1, ::example::set::custom_mix_sets_t)

@@ -1,0 +1,64 @@
+diff --git a/jsonifyer/getters.hpp b/jsonifyer/getters.hpp
+index f9dc037..8248b2e 100644
+--- a/jsonifyer/getters.hpp
++++ b/jsonifyer/getters.hpp
+@@ -168,6 +168,11 @@ namespace jsonifyer::parser {
+              /// CUSTOM STRUCTS ================================================================>>>
+         if constexpr (jsonifyer::type_traits::is_custom_v<T> && I < 1024) {
+ 
++            using base_t = typename std::tuple_name<T>::base_t;
++            if constexpr (I == 0 && !std::is_same_v<base_t, void>) {
++                jsonifyer::parser::get<I, base_t>(jv, object_name, field, out_value, error_msg);
++            }
++
+             if constexpr (I < std::tuple_size_v<T>) {
+                 using object_t = T;
+                 auto obj = jv.if_object();
+diff --git a/jsonifyer/setters.hpp b/jsonifyer/setters.hpp
+index 1082622..cbcab02 100644
+--- a/jsonifyer/setters.hpp
++++ b/jsonifyer/setters.hpp
+@@ -62,11 +62,15 @@ namespace jsonifyer::serializer {
+         } else
+              /// CUSTOM STRUCTS ================================================================>>>
+         if constexpr (I == 0 && jsonifyer::type_traits::is_custom_v<T>) {
+-            ::boost::json::object output;
+-            if constexpr (I < std::tuple_size_v<T>) {
+ 
+-                auto local_inserter = [&output](::boost::json::value&& jv, const std::string& name) { output.emplace(name, jv); };
++            ::boost::json::object output;
++            auto local_inserter = [&output](::boost::json::value&& jv, const std::string& name) { output.emplace(name, jv); };
+ 
++            using base_t = typename std::tuple_name<T>::base_t;
++            if constexpr (!std::is_same_v<base_t, void>) {
++                add<I, base_t>(input, local_inserter);
++            }
++            if constexpr (I < std::tuple_size_v<T>) {
+                 add<0>(std::get<I>(input), std::tuple_element<I, T>::name, local_inserter);
+                 add<I+1>(input, "", local_inserter); /// recoursion
+             }
+diff --git a/tests/complex.cpp b/tests/complex.cpp
+index 74d6ee5..df98e3a 100644
+--- a/tests/complex.cpp
++++ b/tests/complex.cpp
+@@ -33,7 +33,7 @@ auto parse(const std::string& input, T& output) -> bool {
+ template<class T>
+ auto check(const T& input) {
+     const auto data = jsonifyer::serializer::serialize(input);
+-///    std::cout << "Serialized:\n" << data << std::endl;
++    std::cout << "Serialized:\n" << data << std::endl;
+ 
+     T output;
+     REQUIRE(parse(data, output) == true);
+@@ -61,6 +61,11 @@ TEST_CASE("complex serializer & parser tests") {
+         check(type_t(0));
+     }
+ 
++    SECTION("integral ints_inherited_t") {
++        using type_t = example::integral::ints_inherited_t;
++        check(type_t(0));
++    }
++
+     SECTION("integral signed_ints_t") {
+         using type_t = example::integral::signed_ints_t;
+         check(type_t(0));

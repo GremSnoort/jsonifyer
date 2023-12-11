@@ -46,6 +46,47 @@ namespace example::integral {
         DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
+    struct ints_inherited_t : public ints_t {
+        int _5;
+        int _6;
+        int _7;
+        int _8;
+        int _9;
+
+        ints_inherited_t() = default;
+        ints_inherited_t(std::size_t sz)
+            : ints_t(sz)
+            , _5(std::rand())
+            , _6(std::rand())
+            , _7(std::rand())
+            , _8(std::rand())
+            , _9(std::rand())
+        {}
+
+        using self_t = ints_inherited_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    this->ints_t::operator==(other) &&
+                    _5 == other._5 &&
+                    _6 == other._6 &&
+                    _7 == other._7 &&
+                    _8 == other._8 &&
+                    _9 == other._9;
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
+        inline bool operator<(const self_t& other) const {
+            return _0 < other._0;
+        }
+        inline bool operator<(self_t& other) const {
+            return operator<(static_cast<const self_t&>(other));
+        }
+
+        DEFINE_ID_CLASS(int, (_5) (_6) (_7) (_8) (_9) (COUNT))
+    };
+
     /**
      * @brief signed int-s struct
      */
@@ -212,7 +253,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::integral::ints_t)
+    TUPLE_DEFINE(::example::integral::ints_t, void)
 
     TUPLE_ELEMENT(_0, ::example::integral::ints_t)
     TUPLE_ELEMENT(_1, ::example::integral::ints_t)
@@ -224,6 +265,27 @@ namespace std {
 
     /////////////////////////////////////////////////////
 
+    TUPLE_GET_IMPL_HEADER(::example::integral::ints_inherited_t) {
+        using type_t = ::example::integral::ints_inherited_t;
+        TUPLE_BRANCH(_5, type_t) else
+        TUPLE_BRANCH(_6, type_t) else
+        TUPLE_BRANCH(_7, type_t) else
+        TUPLE_BRANCH(_8, type_t) else
+        TUPLE_BRANCH(_9, type_t)
+    }
+
+    TUPLE_DEFINE(::example::integral::ints_inherited_t, ::example::integral::ints_t)
+
+    TUPLE_ELEMENT(_5, ::example::integral::ints_inherited_t)
+    TUPLE_ELEMENT(_6, ::example::integral::ints_inherited_t)
+    TUPLE_ELEMENT(_7, ::example::integral::ints_inherited_t)
+    TUPLE_ELEMENT(_8, ::example::integral::ints_inherited_t)
+    TUPLE_ELEMENT(_9, ::example::integral::ints_inherited_t)
+
+    TUPLE_GETS(::example::integral::ints_inherited_t)
+
+    /////////////////////////////////////////////////////
+
     TUPLE_GET_IMPL_HEADER(::example::integral::signed_ints_t) {
         using type_t = ::example::integral::signed_ints_t;
         TUPLE_BRANCH(_0, type_t) else
@@ -232,7 +294,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::integral::signed_ints_t)
+    TUPLE_DEFINE(::example::integral::signed_ints_t, void)
 
     TUPLE_ELEMENT(_0, ::example::integral::signed_ints_t)
     TUPLE_ELEMENT(_1, ::example::integral::signed_ints_t)
@@ -251,7 +313,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::integral::unsigned_ints_t)
+    TUPLE_DEFINE(::example::integral::unsigned_ints_t, void)
 
     TUPLE_ELEMENT(_0, ::example::integral::unsigned_ints_t)
     TUPLE_ELEMENT(_1, ::example::integral::unsigned_ints_t)
@@ -270,7 +332,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::integral::chars_t)
+    TUPLE_DEFINE(::example::integral::chars_t, void)
 
     TUPLE_ELEMENT(_0, ::example::integral::chars_t)
     TUPLE_ELEMENT(_1, ::example::integral::chars_t)
@@ -287,7 +349,7 @@ namespace std {
         TUPLE_BRANCH(_1, type_t)
     }
 
-    TUPLE_DEFINE(::example::integral::floats_t)
+    TUPLE_DEFINE(::example::integral::floats_t, void)
 
     TUPLE_ELEMENT(_0, ::example::integral::floats_t)
     TUPLE_ELEMENT(_1, ::example::integral::floats_t)

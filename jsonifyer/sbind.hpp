@@ -22,10 +22,11 @@
 /// for your type.
 ///
 
-#define TUPLE_DEFINE(structure) \
+#define TUPLE_DEFINE(structure, base) \
     template <typename T> struct tuple_name; \
     template <> struct tuple_name<structure> { \
         static constexpr auto name = (BOOST_PP_STRINGIZE(structure)); \
+        using base_t = base; \
     }; \
     template <> struct tuple_size<structure> \
         : std::integral_constant<std::size_t, static_cast<std::size_t>(structure::ID_CLASS_NAME::COUNT)> { };

@@ -39,7 +39,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::minimal::unit_t)
+    TUPLE_DEFINE(::minimal::unit_t, void)
 
     TUPLE_ELEMENT(_0, ::minimal::unit_t)
     TUPLE_ELEMENT(_1, ::minimal::unit_t)

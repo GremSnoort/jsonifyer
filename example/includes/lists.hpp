@@ -210,7 +210,7 @@ namespace std {
         TUPLE_BRANCH(_0, ::example::list::bool_lists_t)
     }
 
-    TUPLE_DEFINE(::example::list::bool_lists_t)
+    TUPLE_DEFINE(::example::list::bool_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::bool_lists_t)
 
@@ -227,7 +227,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::int_lists_t)
+    TUPLE_DEFINE(::example::list::int_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::int_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::int_lists_t)
@@ -247,7 +247,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::signed_int_lists_t)
+    TUPLE_DEFINE(::example::list::signed_int_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::signed_int_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::signed_int_lists_t)
@@ -266,7 +266,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::unsigned_int_lists_t)
+    TUPLE_DEFINE(::example::list::unsigned_int_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::unsigned_int_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::unsigned_int_lists_t)
@@ -285,7 +285,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::char_lists_t)
+    TUPLE_DEFINE(::example::list::char_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::char_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::char_lists_t)
@@ -305,7 +305,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::string_lists_t)
+    TUPLE_DEFINE(::example::list::string_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::string_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::string_lists_t)
@@ -326,7 +326,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_int_lists_t)
+    TUPLE_DEFINE(::example::list::custom_int_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_int_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_int_lists_t)
@@ -347,7 +347,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_signed_int_lists_t)
+    TUPLE_DEFINE(::example::list::custom_signed_int_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_signed_int_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_signed_int_lists_t)
@@ -368,7 +368,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_unsigned_int_lists_t)
+    TUPLE_DEFINE(::example::list::custom_unsigned_int_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_unsigned_int_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_unsigned_int_lists_t)
@@ -389,7 +389,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_char_lists_t)
+    TUPLE_DEFINE(::example::list::custom_char_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_char_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_char_lists_t)
@@ -410,7 +410,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_float_lists_t)
+    TUPLE_DEFINE(::example::list::custom_float_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_float_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_float_lists_t)
@@ -431,7 +431,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_mix_lists_t)
+    TUPLE_DEFINE(::example::list::custom_mix_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_mix_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_mix_lists_t)
@@ -452,7 +452,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_float_l_lists_t)
+    TUPLE_DEFINE(::example::list::custom_float_l_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_float_l_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_float_l_lists_t)
@@ -473,7 +473,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::list::custom_float_s_lists_t)
+    TUPLE_DEFINE(::example::list::custom_float_s_lists_t, void)
 
     TUPLE_ELEMENT(_0, ::example::list::custom_float_s_lists_t)
     TUPLE_ELEMENT(_1, ::example::list::custom_float_s_lists_t)

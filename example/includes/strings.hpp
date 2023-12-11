@@ -45,7 +45,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::string::strings_t)
+    TUPLE_DEFINE(::example::string::strings_t, void)
 
     TUPLE_ELEMENT(_0, ::example::string::strings_t)
     TUPLE_ELEMENT(_1, ::example::string::strings_t)

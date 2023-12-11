@@ -181,7 +181,7 @@ namespace std {
         TUPLE_BRANCH(_0, ::example::map::bool_maps_t)
     }
 
-    TUPLE_DEFINE(::example::map::bool_maps_t)
+    TUPLE_DEFINE(::example::map::bool_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::bool_maps_t)
 
@@ -198,7 +198,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::int_maps_t)
+    TUPLE_DEFINE(::example::map::int_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::int_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::int_maps_t)
@@ -218,7 +218,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::signed_int_maps_t)
+    TUPLE_DEFINE(::example::map::signed_int_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::signed_int_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::signed_int_maps_t)
@@ -237,7 +237,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::unsigned_int_maps_t)
+    TUPLE_DEFINE(::example::map::unsigned_int_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::unsigned_int_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::unsigned_int_maps_t)
@@ -256,7 +256,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::char_maps_t)
+    TUPLE_DEFINE(::example::map::char_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::char_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::char_maps_t)
@@ -276,7 +276,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::string_maps_t)
+    TUPLE_DEFINE(::example::map::string_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::string_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::string_maps_t)
@@ -297,7 +297,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::custom_int_maps_t)
+    TUPLE_DEFINE(::example::map::custom_int_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::custom_int_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::custom_int_maps_t)
@@ -318,7 +318,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::custom_signed_int_maps_t)
+    TUPLE_DEFINE(::example::map::custom_signed_int_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::custom_signed_int_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::custom_signed_int_maps_t)
@@ -339,7 +339,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::custom_unsigned_int_maps_t)
+    TUPLE_DEFINE(::example::map::custom_unsigned_int_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::custom_unsigned_int_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::custom_unsigned_int_maps_t)
@@ -360,7 +360,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::custom_char_maps_t)
+    TUPLE_DEFINE(::example::map::custom_char_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::custom_char_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::custom_char_maps_t)
@@ -381,7 +381,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::custom_float_maps_t)
+    TUPLE_DEFINE(::example::map::custom_float_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::custom_float_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::custom_float_maps_t)
@@ -402,7 +402,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::map::custom_mix_maps_t)
+    TUPLE_DEFINE(::example::map::custom_mix_maps_t, void)
 
     TUPLE_ELEMENT(_0, ::example::map::custom_mix_maps_t)
     TUPLE_ELEMENT(_1, ::example::map::custom_mix_maps_t)
