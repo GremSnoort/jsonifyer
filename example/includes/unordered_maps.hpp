@@ -181,7 +181,7 @@ namespace std {
         TUPLE_BRANCH(_0, ::example::unordered_map::bool_unordered_maps_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::bool_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::bool_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::bool_unordered_maps_t)
 
@@ -198,7 +198,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::int_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::int_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::int_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::int_unordered_maps_t)
@@ -218,7 +218,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::signed_int_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::signed_int_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::signed_int_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::signed_int_unordered_maps_t)
@@ -237,7 +237,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::unsigned_int_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::unsigned_int_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::unsigned_int_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::unsigned_int_unordered_maps_t)
@@ -256,7 +256,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::char_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::char_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::char_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::char_unordered_maps_t)
@@ -276,7 +276,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::string_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::string_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::string_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::string_unordered_maps_t)
@@ -297,7 +297,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::custom_int_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::custom_int_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::custom_int_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::custom_int_unordered_maps_t)
@@ -318,7 +318,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::custom_signed_int_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::custom_signed_int_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::custom_signed_int_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::custom_signed_int_unordered_maps_t)
@@ -339,7 +339,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::custom_unsigned_int_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::custom_unsigned_int_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::custom_unsigned_int_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::custom_unsigned_int_unordered_maps_t)
@@ -360,7 +360,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::custom_char_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::custom_char_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::custom_char_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::custom_char_unordered_maps_t)
@@ -381,7 +381,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::custom_float_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::custom_float_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::custom_float_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::custom_float_unordered_maps_t)
@@ -402,7 +402,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::unordered_map::custom_mix_unordered_maps_t, void)
+    TUPLE_DEFINE(::example::unordered_map::custom_mix_unordered_maps_t)
 
     TUPLE_ELEMENT(_0, ::example::unordered_map::custom_mix_unordered_maps_t)
     TUPLE_ELEMENT(_1, ::example::unordered_map::custom_mix_unordered_maps_t)

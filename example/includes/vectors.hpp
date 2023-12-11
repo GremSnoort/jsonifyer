@@ -380,7 +380,7 @@ namespace std {
         TUPLE_BRANCH(_0, ::example::vector::bool_vectors_t)
     }
 
-    TUPLE_DEFINE(::example::vector::bool_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::bool_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::bool_vectors_t)
 
@@ -397,7 +397,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::int_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::int_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::int_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::int_vectors_t)
@@ -417,7 +417,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::signed_int_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::signed_int_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::signed_int_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::signed_int_vectors_t)
@@ -436,7 +436,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::unsigned_int_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::unsigned_int_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::unsigned_int_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::unsigned_int_vectors_t)
@@ -455,7 +455,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::char_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::char_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::char_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::char_vectors_t)
@@ -475,7 +475,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::string_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::string_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::string_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::string_vectors_t)
@@ -496,7 +496,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_int_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_int_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_int_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_int_vectors_t)
@@ -517,7 +517,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_signed_int_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_signed_int_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_signed_int_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_signed_int_vectors_t)
@@ -538,7 +538,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_unsigned_int_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_unsigned_int_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_unsigned_int_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_unsigned_int_vectors_t)
@@ -559,7 +559,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_char_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_char_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_char_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_char_vectors_t)
@@ -580,7 +580,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_float_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_float_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_float_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_float_vectors_t)
@@ -601,7 +601,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_mix_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_mix_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_mix_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_mix_vectors_t)
@@ -622,7 +622,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_float_v_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_float_v_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_float_v_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_float_v_vectors_t)
@@ -643,7 +643,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_float_s_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_float_s_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_float_s_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_float_s_vectors_t)
@@ -664,7 +664,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::vector::custom_float_m_vectors_t, void)
+    TUPLE_DEFINE(::example::vector::custom_float_m_vectors_t)
 
     TUPLE_ELEMENT(_0, ::example::vector::custom_float_m_vectors_t)
     TUPLE_ELEMENT(_1, ::example::vector::custom_float_m_vectors_t)

@@ -53,6 +53,7 @@ namespace example::string {
             return operator==(static_cast<const self_t&>(other));
         }
 
+        DEFINE_BASE_CLASS(strings_t)
         DEFINE_ID_CLASS(int, (_5) (_6) (_7) (_8) (_9) (COUNT))
     };
 
@@ -77,6 +78,7 @@ namespace example::string {
             return operator==(static_cast<const self_t&>(other));
         }
 
+        DEFINE_BASE_CLASS(strings_inherited_t)
         DEFINE_ID_CLASS(int, (_10) (_11) (_12) (_13) (_14) (COUNT))
     };
 
@@ -93,7 +95,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::string::strings_t, void)
+    TUPLE_DEFINE(::example::string::strings_t)
 
     TUPLE_ELEMENT(_0, ::example::string::strings_t)
     TUPLE_ELEMENT(_1, ::example::string::strings_t)
@@ -114,7 +116,7 @@ namespace std {
         TUPLE_BRANCH(_9, type_t)
     }
 
-    TUPLE_DEFINE(::example::string::strings_inherited_t, ::example::string::strings_t)
+    TUPLE_DEFINE(::example::string::strings_inherited_t)
 
     TUPLE_ELEMENT(_5, ::example::string::strings_inherited_t)
     TUPLE_ELEMENT(_6, ::example::string::strings_inherited_t)
@@ -135,7 +137,7 @@ namespace std {
         TUPLE_BRANCH(_14, type_t)
     }
 
-    TUPLE_DEFINE(::example::string::strings_inherited_2_t, ::example::string::strings_inherited_t)
+    TUPLE_DEFINE(::example::string::strings_inherited_2_t)
 
     TUPLE_ELEMENT(_10, ::example::string::strings_inherited_2_t)
     TUPLE_ELEMENT(_11, ::example::string::strings_inherited_2_t)

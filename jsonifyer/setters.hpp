@@ -11,6 +11,7 @@
 #include <fmt/format.h>
 
 #include <jsonifyer/type_traits.hpp>
+#include <jsonifyer/sbind.hpp>
 
 namespace std {
 
@@ -75,16 +76,16 @@ namespace jsonifyer::serializer {
              /// CUSTOM STRUCTS ================================================================>>>
         if constexpr (I == 0 && jsonifyer::type_traits::is_custom_v<T>) {
 
-            std::printf("%s :: I = %lu; T = %s; new_unit = %d\n", __func__, I, std::tuple_name<T>::name, new_unit);
-
             ::boost::json::object output;
             auto local_inserter = [&output](::boost::json::value&& jv, const std::string& name) { output.emplace(name, jv); };
 
-            using base_t = typename std::tuple_name<T>::base_t;
-            if constexpr (!std::is_same_v<base_t, void>) {
-                /// Has base class
-                add<0, base_t>(input, name, new_unit ? local_inserter : inserter, false/*no new unit; place via local_inserter to an `output` unit*/);
-            } /// here all base classes are serialized and placed into `output`
+            if constexpr (jsonifyer::type_traits::has_base_type_v<T>) {
+                using base_t = jsonifyer::type_traits::base_type_t<T>;
+                if constexpr (!std::is_same_v<base_t, void>) {
+                    /// Has base class
+                    add<0, base_t>(input, name, new_unit ? local_inserter : inserter, false/*no new unit; place via local_inserter to an `output` unit*/);
+                } /// here all base classes are serialized and placed into `output`
+            }
 
             if constexpr (I < std::tuple_size_v<T>) {
                 add<0>(std::get<I>(input), std::tuple_element<I, T>::name, new_unit ? local_inserter : inserter, new_unit);
@@ -101,7 +102,6 @@ namespace jsonifyer::serializer {
         if constexpr (I > 0 && jsonifyer::type_traits::is_custom_v<T>) {
 
             if constexpr (I < std::tuple_size_v<T>) {
-                              std::printf("%s :: I = %lu; T = %s; elem `%s`; new_unit = %d\n", __func__, I, std::tuple_name<T>::name, std::tuple_element<I, T>::name, new_unit);
                 add<0>(std::get<I>(input), std::tuple_element<I, T>::name, inserter, new_unit);
                 add<I+1>(input, "", inserter, new_unit); /// recoursion
             }

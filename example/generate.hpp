@@ -3,6 +3,7 @@
 #include <tuple>
 
 #include <jsonifyer/type_traits.hpp>
+#include <jsonifyer/sbind.hpp>
 
 namespace example {
 
@@ -65,6 +66,10 @@ namespace example {
             }
         } else
         if constexpr (jsonifyer::type_traits::is_custom_v<T> && I < 1024) {
+            if constexpr (jsonifyer::type_traits::has_base_type_v<T>) {
+                using base_t = jsonifyer::type_traits::base_type_t<T>;
+                generate<0, base_t>(len, input);
+            }
             if constexpr (I < std::tuple_size_v<T>) {
                 generate<0>(len, std::get<I>(input));
                 generate<I+1>(len, input);

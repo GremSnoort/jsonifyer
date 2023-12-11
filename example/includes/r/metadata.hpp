@@ -155,7 +155,7 @@ namespace std {
         TUPLE_BRANCH(height,    type_t)
     }
 
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t, void)
+    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
 
     TUPLE_ELEMENT(x, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
     TUPLE_ELEMENT(y, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
@@ -175,7 +175,7 @@ namespace std {
         TUPLE_BRANCH(prn_class, type_t)
     }
 
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t, void)
+    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t)
 
     TUPLE_ELEMENT(bbox, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
     TUPLE_ELEMENT(score, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
@@ -197,7 +197,7 @@ namespace std {
         TUPLE_BRANCH(detections,    type_t)
     }
 
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>, void)
+    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>)
 
     TUPLE_ELEMENT(object_id, ::example::real::data_t<example::real::mode_e::MONO>)
     TUPLE_ELEMENT(packt_idx, ::example::real::data_t<example::real::mode_e::MONO>)
@@ -214,7 +214,7 @@ namespace std {
         TUPLE_BRANCH(data, ::example::real::data_t<example::real::mode_e::ARRAY>)
     }
 
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::ARRAY>, void)
+    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::ARRAY>)
 
     TUPLE_ELEMENT(data, ::example::real::data_t<example::real::mode_e::ARRAY>)
 

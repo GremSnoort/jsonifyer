@@ -179,7 +179,7 @@ namespace std {
         TUPLE_BRANCH(_0, ::example::deque::bool_deques_t)
     }
 
-    TUPLE_DEFINE(::example::deque::bool_deques_t, void)
+    TUPLE_DEFINE(::example::deque::bool_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::bool_deques_t)
 
@@ -196,7 +196,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::int_deques_t, void)
+    TUPLE_DEFINE(::example::deque::int_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::int_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::int_deques_t)
@@ -216,7 +216,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::signed_int_deques_t, void)
+    TUPLE_DEFINE(::example::deque::signed_int_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::signed_int_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::signed_int_deques_t)
@@ -235,7 +235,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::unsigned_int_deques_t, void)
+    TUPLE_DEFINE(::example::deque::unsigned_int_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::unsigned_int_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::unsigned_int_deques_t)
@@ -254,7 +254,7 @@ namespace std {
         TUPLE_BRANCH(_3, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::char_deques_t, void)
+    TUPLE_DEFINE(::example::deque::char_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::char_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::char_deques_t)
@@ -274,7 +274,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::string_deques_t, void)
+    TUPLE_DEFINE(::example::deque::string_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::string_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::string_deques_t)
@@ -295,7 +295,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::custom_int_deques_t, void)
+    TUPLE_DEFINE(::example::deque::custom_int_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::custom_int_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::custom_int_deques_t)
@@ -316,7 +316,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::custom_signed_int_deques_t, void)
+    TUPLE_DEFINE(::example::deque::custom_signed_int_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::custom_signed_int_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::custom_signed_int_deques_t)
@@ -337,7 +337,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::custom_unsigned_int_deques_t, void)
+    TUPLE_DEFINE(::example::deque::custom_unsigned_int_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::custom_unsigned_int_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::custom_unsigned_int_deques_t)
@@ -358,7 +358,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::custom_char_deques_t, void)
+    TUPLE_DEFINE(::example::deque::custom_char_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::custom_char_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::custom_char_deques_t)
@@ -379,7 +379,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::custom_float_deques_t, void)
+    TUPLE_DEFINE(::example::deque::custom_float_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::custom_float_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::custom_float_deques_t)
@@ -400,7 +400,7 @@ namespace std {
         TUPLE_BRANCH(_4, type_t)
     }
 
-    TUPLE_DEFINE(::example::deque::custom_mix_deques_t, void)
+    TUPLE_DEFINE(::example::deque::custom_mix_deques_t)
 
     TUPLE_ELEMENT(_0, ::example::deque::custom_mix_deques_t)
     TUPLE_ELEMENT(_1, ::example::deque::custom_mix_deques_t)

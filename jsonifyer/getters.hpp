@@ -9,6 +9,7 @@
 #include <fmt/format.h>
 
 #include <jsonifyer/type_traits.hpp>
+#include <jsonifyer/sbind.hpp>
 
 namespace std {
 
@@ -166,9 +167,11 @@ namespace jsonifyer::parser {
              /// CUSTOM STRUCTS ================================================================>>>
         if constexpr (jsonifyer::type_traits::is_custom_v<T> && I < 1024) {
 
-            using base_t = typename std::tuple_name<T>::base_t;
-            if constexpr (I == 0 && !std::is_same_v<base_t, void>) { /// has base class
-                jsonifyer::parser::get<I, base_t>(jv, object_name, field, out_value, error_msg);
+            if constexpr (jsonifyer::type_traits::has_base_type_v<T>) {
+                using base_t = jsonifyer::type_traits::base_type_t<T>;
+                if constexpr (I == 0 && !std::is_same_v<base_t, void>) { /// has base class
+                    jsonifyer::parser::get<I, base_t>(jv, object_name, field, out_value, error_msg);
+                }
             }
 
             if constexpr (I < std::tuple_size_v<T>) {
