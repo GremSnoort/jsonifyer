@@ -48,7 +48,7 @@ namespace jsonifyer::serializer {
 
         } else
              /// ARRAY TYPES ===================================================================>>>
-        if constexpr (I == 0 && (!std::is_same_v<T, std::string> && jsonifyer::type_traits::has_push_back_method_v<T>) || jsonifyer::type_traits::is_set<T>::value) {
+        if constexpr (I == 0 && ((!std::is_same_v<T, std::string> && jsonifyer::type_traits::has_push_back_method_v<T>) || jsonifyer::type_traits::is_set<T>::value)) {
             ::boost::json::array arr;
             for (const auto& v : input) {
                 add<0>(v, "", [&arr](::boost::json::value&& jv, const std::string&) { arr.emplace_back(jv); });
