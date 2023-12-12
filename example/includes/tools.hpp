@@ -49,6 +49,6 @@ namespace example::tools {
             return true;
         }
         return false;
-    };
+    }
 
 }
