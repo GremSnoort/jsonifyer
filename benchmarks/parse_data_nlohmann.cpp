@@ -10,17 +10,22 @@
 
 namespace benchmark {
 
+    template<class T>
+    inline auto to_string(const T& internal) -> std::string {
+        nlohmann::json json;
+        to_json(json, internal);
+        return json.dump();
+    }
+
     template<std::size_t L, class T>
     void fixture_t<L, T>::SetUp(const ::benchmark::State&) {
         std::srand(static_cast<unsigned int>(time(nullptr)));
         example::generate<0>(L, internal);
-        nlohmann::json json;
-        to_json(json, internal);
-        data = json.dump();
+        data = to_string(internal);
     }
 
     template<class T>
-    auto parse(const std::string& input, T& output) -> void {
+    inline auto parse(const std::string& input, T& output) -> void {
         from_json(nlohmann::json::parse(input), output);
     }
 

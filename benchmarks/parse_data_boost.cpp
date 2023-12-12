@@ -20,7 +20,7 @@ namespace benchmark {
     }
 
     template<class T>
-    auto parse(const std::string& input, T& output) -> bool {
+    inline auto parse(const std::string& input, T& output) -> bool {
         std::string error;
         return jsonifyer::parser::from_string<T>(input, __func__, output, error);
     }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <boost/json.hpp>
 #include <string>
 #include <vector>
 
@@ -65,6 +66,15 @@ namespace example::real {
                     return operator==(static_cast<const self_t&>(other));
                 }
 
+                auto b_to_json() const -> ::boost::json::value {
+                    ::boost::json::object o;
+                    o["x"] = x;
+                    o["y"] = y;
+                    o["width"] = width;
+                    o["height"] = height;
+                    return o;
+                }
+
                 SBIND_ID_CLASS(int8_t, (x) (y) (width) (height) (COUNT))
                 NLOHMANN_DEFINE_TYPE_INTRUSIVE(bbox_t, x, y, width, height)
             } bbox;
@@ -85,6 +95,16 @@ namespace example::real {
 
             inline bool operator==(self_t& other) const {
                 return operator==(static_cast<const self_t&>(other));
+            }
+
+            auto b_to_json() const -> ::boost::json::value {
+                ::boost::json::object o;
+                o["bbox"] = bbox.b_to_json();
+                o["score"] = score;
+                o["ssl_class"] = ssl_class;
+                o["ufc_class"] = ufc_class;
+                o["prn_class"] = prn_class;
+                return o;
             }
 
             SBIND_ID_CLASS(int8_t, (bbox) (score) (ssl_class) (ufc_class) (prn_class) (COUNT))
@@ -126,6 +146,21 @@ namespace example::real {
 
         inline bool operator==(self_t& other) const {
             return operator==(static_cast<const self_t&>(other));
+        }
+
+        auto b_to_json() -> ::boost::json::value {
+            ::boost::json::object o;
+            o["object_id"] = object_id;
+            o["packt_idx"] = packt_idx;
+            o["timestamp"] = timestamp;
+            o["iunit_width"] = iunit_width;
+            o["iunit_height"] = iunit_height;
+            ::boost::json::array arr;
+            for (const auto& e : essentials) {
+                arr.emplace_back(e.b_to_json());
+            }
+            o["essentials"] = arr;
+            return o;
         }
 
         SBIND_ID_CLASS(int8_t, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (essentials) (COUNT))
