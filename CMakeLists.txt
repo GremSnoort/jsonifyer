@@ -57,6 +57,7 @@ conan_cmake_run(REQUIRES
     fmt/10.1.1
     catch2/3.3.2
     benchmark/1.8.3
+    nlohmann_json/3.11.3 ### for benchmarks only
     BASIC_SETUP CMAKE_TARGETS
     ENV CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
     BUILD missing

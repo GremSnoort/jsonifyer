@@ -50,6 +50,7 @@ namespace jsonifyer::serializer {
              /// ARRAY TYPES ===================================================================>>>
         if constexpr (I == 0 && ((!std::is_same_v<T, std::string> && jsonifyer::type_traits::has_push_back_method_v<T>) || jsonifyer::type_traits::is_set<T>::value)) {
             ::boost::json::array arr;
+            arr.reserve(input.size());
             for (const auto& v : input) {
                 add<0>(v, "", [&arr](::boost::json::value&& jv, const std::string&) { arr.emplace_back(jv); });
             }
@@ -60,14 +61,14 @@ namespace jsonifyer::serializer {
              /// STD::MAP ======================================================================>>>
         if constexpr (I == 0 && jsonifyer::type_traits::is_map_v<T>) {
             ::boost::json::object obj;
+            obj.reserve(input.size());
+            auto local_inserter = [&obj](::boost::json::value&& jv, const std::string& name) { obj.emplace(name, jv); };
             for (const auto& [k, v] : input) {
-                std::string key = "";
                 if constexpr (std::is_base_of_v<typename jsonifyer::type_traits::key_type<T>::type, std::string>) {
-                    key = k;
+                    add<0>(v, k, local_inserter);
                 } else if constexpr (std::is_integral_v<typename jsonifyer::type_traits::key_type<T>::type>) {
-                    key = std::to_string(k);
+                    add<0>(v, std::to_string(k), local_inserter);
                 }
-                add<0>(v, key, [&obj](::boost::json::value&& jv, const std::string& name) { obj.emplace(name, jv); });
              }
              inserter(::boost::json::value(obj), name);
              return true;
@@ -77,6 +78,9 @@ namespace jsonifyer::serializer {
         if constexpr (I == 0 && jsonifyer::type_traits::is_custom_v<T>) {
 
             ::boost::json::object output;
+            if (new_unit) {
+                output.reserve(std::tuple_size_v<T>);
+            }
             auto local_inserter = [&output](::boost::json::value&& jv, const std::string& name) { output.emplace(name, jv); };
 
             if constexpr (jsonifyer::type_traits::has_base_type_v<T>) {
