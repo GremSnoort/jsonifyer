@@ -1,5 +1,9 @@
 name: Clang Builds
-on: workflow_dispatch
+on:
+  workflow_run:
+    workflows: [GCC Builds]
+    types:
+      - completed
 
 jobs:
   build:
