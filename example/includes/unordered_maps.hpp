@@ -2,6 +2,7 @@
 
 #include <unordered_map>
 
+#include <example/includes/tools.hpp>
 #include <example/includes/integrals.hpp>
 #include <example/includes/strings.hpp>
 
@@ -18,6 +19,15 @@ namespace example::unordered_map {
         using iternal_t = std::unordered_map<key_type, bool>;
         iternal_t _0;
 
+        using self_t = bool_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         SBIND_ID_CLASS(int, (_0) (COUNT))
     };
 
@@ -32,6 +42,19 @@ namespace example::unordered_map {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = int_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -43,6 +66,18 @@ namespace example::unordered_map {
         std::unordered_map<key_type, int16_t> _1;
         std::unordered_map<key_type, int32_t> _2;
         std::unordered_map<key_type, int64_t> _3;
+
+        using self_t = signed_int_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
@@ -56,6 +91,18 @@ namespace example::unordered_map {
         std::unordered_map<key_type, uint32_t> _2;
         std::unordered_map<key_type, uint64_t> _3;
 
+        using self_t = unsigned_int_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
@@ -67,6 +114,18 @@ namespace example::unordered_map {
         std::unordered_map<key_type, char16_t> _1;
         std::unordered_map<key_type, char32_t> _2;
         std::unordered_map<key_type, unsigned char> _3;
+
+        using self_t = char_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
@@ -81,6 +140,19 @@ namespace example::unordered_map {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = string_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
@@ -97,6 +169,19 @@ namespace example::unordered_map {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = custom_int_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -111,6 +196,19 @@ namespace example::unordered_map {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = custom_signed_int_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
@@ -127,6 +225,19 @@ namespace example::unordered_map {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = custom_unsigned_int_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -141,6 +252,19 @@ namespace example::unordered_map {
         iternal_t _2;
         iternal_t _3;
         iternal_t _4;
+
+        using self_t = custom_char_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
@@ -157,6 +281,19 @@ namespace example::unordered_map {
         iternal_t _3;
         iternal_t _4;
 
+        using self_t = custom_float_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
+
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
@@ -169,6 +306,19 @@ namespace example::unordered_map {
         std::unordered_map<key_type, example::integral::unsigned_ints_t> _2;
         std::unordered_map<key_type, example::integral::chars_t> _3;
         std::unordered_map<key_type, example::integral::floats_t> _4;
+
+        using self_t = custom_mix_unordered_maps_t;
+        inline bool operator==(const self_t& other) const {
+            return
+                    example::tools::compare_maps(_0, other._0) &&
+                    example::tools::compare_maps(_1, other._1) &&
+                    example::tools::compare_maps(_2, other._2) &&
+                    example::tools::compare_maps(_3, other._3) &&
+                    example::tools::compare_maps(_4, other._4);
+        }
+        inline bool operator==(self_t& other) const {
+            return operator==(static_cast<const self_t&>(other));
+        }
 
         SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };

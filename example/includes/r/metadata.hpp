@@ -86,7 +86,7 @@ namespace example::real {
             SBIND_ID_CLASS(int8_t, (bbox) (score) (ssl_class) (ufc_class) (prn_class) (COUNT))
         };
 
-        std::vector<essential_t> detections;
+        std::vector<essential_t> essentials;
 
         data_t() = default;
         data_t(data_t&&) = default;
@@ -106,10 +106,10 @@ namespace example::real {
                     timestamp == other.timestamp &&
                     iunit_width == other.iunit_width &&
                     iunit_height == other.iunit_height) {
-                if (detections.size() == other.detections.size()) {
+                if (essentials.size() == other.essentials.size()) {
                     std::size_t i = 0;
-                    for (const auto& d : other.detections) {
-                        if (!(d == detections.at(i++))) {
+                    for (const auto& d : other.essentials) {
+                        if (!(d == essentials.at(i++))) {
                             return false;
                         }
                     }
@@ -123,7 +123,7 @@ namespace example::real {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        SBIND_ID_CLASS(int8_t, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (detections) (COUNT))
+        SBIND_ID_CLASS(int8_t, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (essentials) (COUNT))
 
     };
 
@@ -149,6 +149,6 @@ namespace std {
 
     SBIND_IFACE(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t, (x) (y) (width) (height))
     SBIND_IFACE(::example::real::data_t<example::real::mode_e::MONO>::essential_t, (bbox) (score) (ssl_class) (ufc_class) (prn_class))
-    SBIND_IFACE(::example::real::data_t<example::real::mode_e::MONO>, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (detections))
+    SBIND_IFACE(::example::real::data_t<example::real::mode_e::MONO>, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (essentials))
     SBIND_IFACE(::example::real::data_t<example::real::mode_e::ARRAY>, (data))
 }

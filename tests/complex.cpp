@@ -323,6 +323,92 @@ TEST_CASE("complex serializer & parser tests") {
 
     ///////////////////////////////////////////////////////////////
 
+    SECTION("deque bool_deques_t") {
+        using type_t = example::deque::bool_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque int_deques_t") {
+        using type_t = example::deque::int_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque signed_int_deques_t") {
+        using type_t = example::deque::signed_int_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque unsigned_int_deques_t") {
+        using type_t = example::deque::unsigned_int_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque char_deques_t") {
+        using type_t = example::deque::char_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque string_deques_t") {
+        using type_t = example::deque::string_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque custom_int_deques_t") {
+        using type_t = example::deque::custom_int_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque custom_signed_int_deques_t") {
+        using type_t = example::deque::custom_signed_int_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque unsigned_int_deques_t") {
+        using type_t = example::deque::unsigned_int_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque custom_char_deques_t") {
+        using type_t = example::deque::custom_char_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque custom_float_deques_t") {
+        using type_t = example::deque::custom_float_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("deque custom_mix_deques_t") {
+        using type_t = example::deque::custom_mix_deques_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    ///////////////////////////////////////////////////////////////
+
     SECTION("map bool_maps_t") {
         using type_t = example::map::bool_maps_t;
         type_t data;
@@ -488,6 +574,92 @@ TEST_CASE("complex serializer & parser tests") {
 
     SECTION("set custom_mix_sets_t") {
         using type_t = example::set::custom_mix_sets_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    ///////////////////////////////////////////////////////////////
+
+    SECTION("unordered_map bool_unordered_maps_t") {
+        using type_t = example::unordered_map::bool_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map int_unordered_maps_t") {
+        using type_t = example::unordered_map::int_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map signed_int_unordered_maps_t") {
+        using type_t = example::unordered_map::signed_int_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map unsigned_int_unordered_maps_t") {
+        using type_t = example::unordered_map::unsigned_int_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map char_unordered_maps_t") {
+        using type_t = example::unordered_map::char_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map string_unordered_maps_t") {
+        using type_t = example::unordered_map::string_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map custom_int_unordered_maps_t") {
+        using type_t = example::unordered_map::custom_int_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map custom_signed_int_unordered_maps_t") {
+        using type_t = example::unordered_map::custom_signed_int_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map unsigned_int_unordered_maps_t") {
+        using type_t = example::unordered_map::unsigned_int_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map custom_char_unordered_maps_t") {
+        using type_t = example::unordered_map::custom_char_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map custom_float_unordered_maps_t") {
+        using type_t = example::unordered_map::custom_float_unordered_maps_t;
+        type_t data;
+        example::generate<0>(512, data);
+        check(data);
+    }
+
+    SECTION("unordered_map custom_mix_unordered_maps_t") {
+        using type_t = example::unordered_map::custom_mix_unordered_maps_t;
         type_t data;
         example::generate<0>(512, data);
         check(data);
