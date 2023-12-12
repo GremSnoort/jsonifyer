@@ -112,9 +112,6 @@ jobs:
           cd ../../ && echo ${PWD}
           git config --global --add safe.directory ${PWD}
           cat ~/.gitconfig
-          git remote update origin --prune
-          git checkout gh-pages
-          git pull origin gh-pages
 
       - name: Store benchmark_process result
         uses: benchmark-action/github-action-benchmark@v1
