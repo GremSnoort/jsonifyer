@@ -43,7 +43,7 @@ namespace example::integral {
             return operator<(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     struct ints_inherited_t : public ints_t {
@@ -84,8 +84,8 @@ namespace example::integral {
             return operator<(static_cast<const self_t&>(other));
         }
 
-        DEFINE_BASE_CLASS(ints_t)
-        DEFINE_ID_CLASS(int, (_5) (_6) (_7) (_8) (_9) (COUNT))
+        SBIND_BASE_CLASS(ints_t)
+        SBIND_ID_CLASS(int, (_5) (_6) (_7) (_8) (_9) (COUNT))
     };
 
     struct ints_inherited_2_t : public ints_inherited_t {
@@ -126,8 +126,8 @@ namespace example::integral {
             return operator<(static_cast<const self_t&>(other));
         }
 
-        DEFINE_BASE_CLASS(ints_inherited_t)
-        DEFINE_ID_CLASS(int, (_10) (_11) (_12) (_13) (_14) (COUNT))
+        SBIND_BASE_CLASS(ints_inherited_t)
+        SBIND_ID_CLASS(int, (_10) (_11) (_12) (_13) (_14) (COUNT))
     };
 
     /**
@@ -167,7 +167,7 @@ namespace example::integral {
             return operator<(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -207,7 +207,7 @@ namespace example::integral {
             return operator<(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -247,7 +247,7 @@ namespace example::integral {
             return operator<(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -280,144 +280,19 @@ namespace example::integral {
             return operator<(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (COUNT))
     };
 
 }
 
 namespace std {
 
-    TUPLE_GET_IMPL_HEADER(::example::integral::ints_t) {
-        using type_t = ::example::integral::ints_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::integral::ints_t)
-
-    TUPLE_ELEMENT(_0, ::example::integral::ints_t)
-    TUPLE_ELEMENT(_1, ::example::integral::ints_t)
-    TUPLE_ELEMENT(_2, ::example::integral::ints_t)
-    TUPLE_ELEMENT(_3, ::example::integral::ints_t)
-    TUPLE_ELEMENT(_4, ::example::integral::ints_t)
-
-    TUPLE_GETS(::example::integral::ints_t)
-
-    /////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::integral::ints_inherited_t) {
-        using type_t = ::example::integral::ints_inherited_t;
-        TUPLE_BRANCH(_5, type_t) else
-        TUPLE_BRANCH(_6, type_t) else
-        TUPLE_BRANCH(_7, type_t) else
-        TUPLE_BRANCH(_8, type_t) else
-        TUPLE_BRANCH(_9, type_t)
-    }
-
-    TUPLE_DEFINE(::example::integral::ints_inherited_t)
-
-    TUPLE_ELEMENT(_5, ::example::integral::ints_inherited_t)
-    TUPLE_ELEMENT(_6, ::example::integral::ints_inherited_t)
-    TUPLE_ELEMENT(_7, ::example::integral::ints_inherited_t)
-    TUPLE_ELEMENT(_8, ::example::integral::ints_inherited_t)
-    TUPLE_ELEMENT(_9, ::example::integral::ints_inherited_t)
-
-    TUPLE_GETS(::example::integral::ints_inherited_t)
-
-    /////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::integral::ints_inherited_2_t) {
-        using type_t = ::example::integral::ints_inherited_2_t;
-        TUPLE_BRANCH(_10, type_t) else
-        TUPLE_BRANCH(_11, type_t) else
-        TUPLE_BRANCH(_12, type_t) else
-        TUPLE_BRANCH(_13, type_t) else
-        TUPLE_BRANCH(_14, type_t)
-    }
-
-    TUPLE_DEFINE(::example::integral::ints_inherited_2_t)
-
-    TUPLE_ELEMENT(_10, ::example::integral::ints_inherited_2_t)
-    TUPLE_ELEMENT(_11, ::example::integral::ints_inherited_2_t)
-    TUPLE_ELEMENT(_12, ::example::integral::ints_inherited_2_t)
-    TUPLE_ELEMENT(_13, ::example::integral::ints_inherited_2_t)
-    TUPLE_ELEMENT(_14, ::example::integral::ints_inherited_2_t)
-
-    TUPLE_GETS(::example::integral::ints_inherited_2_t)
-
-    /////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::integral::signed_ints_t) {
-        using type_t = ::example::integral::signed_ints_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::integral::signed_ints_t)
-
-    TUPLE_ELEMENT(_0, ::example::integral::signed_ints_t)
-    TUPLE_ELEMENT(_1, ::example::integral::signed_ints_t)
-    TUPLE_ELEMENT(_2, ::example::integral::signed_ints_t)
-    TUPLE_ELEMENT(_3, ::example::integral::signed_ints_t)
-
-    TUPLE_GETS(::example::integral::signed_ints_t)
-
-    /////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::integral::unsigned_ints_t) {
-        using type_t = ::example::integral::unsigned_ints_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::integral::unsigned_ints_t)
-
-    TUPLE_ELEMENT(_0, ::example::integral::unsigned_ints_t)
-    TUPLE_ELEMENT(_1, ::example::integral::unsigned_ints_t)
-    TUPLE_ELEMENT(_2, ::example::integral::unsigned_ints_t)
-    TUPLE_ELEMENT(_3, ::example::integral::unsigned_ints_t)
-
-    TUPLE_GETS(::example::integral::unsigned_ints_t)
-
-    /////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::integral::chars_t) {
-        using type_t = ::example::integral::chars_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::integral::chars_t)
-
-    TUPLE_ELEMENT(_0, ::example::integral::chars_t)
-    TUPLE_ELEMENT(_1, ::example::integral::chars_t)
-    TUPLE_ELEMENT(_2, ::example::integral::chars_t)
-    TUPLE_ELEMENT(_3, ::example::integral::chars_t)
-
-    TUPLE_GETS(::example::integral::chars_t)
-
-    /////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::integral::floats_t) {
-        using type_t = ::example::integral::floats_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t)
-    }
-
-    TUPLE_DEFINE(::example::integral::floats_t)
-
-    TUPLE_ELEMENT(_0, ::example::integral::floats_t)
-    TUPLE_ELEMENT(_1, ::example::integral::floats_t)
-
-    TUPLE_GETS(::example::integral::floats_t)
+    SBIND_IFACE(::example::integral::ints_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::integral::ints_inherited_t, (_5) (_6) (_7) (_8) (_9))
+    SBIND_IFACE(::example::integral::ints_inherited_2_t, (_10) (_11) (_12) (_13) (_14))
+    SBIND_IFACE(::example::integral::signed_ints_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::integral::unsigned_ints_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::integral::chars_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::integral::floats_t, (_0) (_1))
 
 }

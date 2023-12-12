@@ -62,7 +62,7 @@ namespace example::real {
                     return operator==(static_cast<const self_t&>(other));
                 }
 
-                DEFINE_ID_CLASS(int8_t, (x) (y) (width) (height) (COUNT))
+                SBIND_ID_CLASS(int8_t, (x) (y) (width) (height) (COUNT))
             } bbox;
             double score;
             int8_t ssl_class;
@@ -83,7 +83,7 @@ namespace example::real {
                 return operator==(static_cast<const self_t&>(other));
             }
 
-            DEFINE_ID_CLASS(int8_t, (bbox) (score) (ssl_class) (ufc_class) (prn_class) (COUNT))
+            SBIND_ID_CLASS(int8_t, (bbox) (score) (ssl_class) (ufc_class) (prn_class) (COUNT))
         };
 
         std::vector<essential_t> detections;
@@ -123,7 +123,7 @@ namespace example::real {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int8_t, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (detections) (COUNT))
+        SBIND_ID_CLASS(int8_t, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (detections) (COUNT))
 
     };
 
@@ -140,83 +140,15 @@ namespace example::real {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int8_t, (data) (COUNT))
+        SBIND_ID_CLASS(int8_t, (data) (COUNT))
     };
 
 }
 
 namespace std {
 
-    TUPLE_GET_IMPL_HEADER(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t) {
-        using type_t = ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t;
-        TUPLE_BRANCH(x,         type_t) else
-        TUPLE_BRANCH(y,         type_t) else
-        TUPLE_BRANCH(width,     type_t) else
-        TUPLE_BRANCH(height,    type_t)
-    }
-
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
-
-    TUPLE_ELEMENT(x, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
-    TUPLE_ELEMENT(y, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
-    TUPLE_ELEMENT(width, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
-    TUPLE_ELEMENT(height, ::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
-
-    TUPLE_GETS(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t)
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::real::data_t<example::real::mode_e::MONO>::essential_t) {
-        using type_t = ::example::real::data_t<example::real::mode_e::MONO>::essential_t;
-        TUPLE_BRANCH(bbox,      type_t) else
-        TUPLE_BRANCH(score,     type_t) else
-        TUPLE_BRANCH(ssl_class, type_t) else
-        TUPLE_BRANCH(ufc_class, type_t) else
-        TUPLE_BRANCH(prn_class, type_t)
-    }
-
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>::essential_t)
-
-    TUPLE_ELEMENT(bbox, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
-    TUPLE_ELEMENT(score, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
-    TUPLE_ELEMENT(ssl_class, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
-    TUPLE_ELEMENT(ufc_class, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
-    TUPLE_ELEMENT(prn_class, ::example::real::data_t<example::real::mode_e::MONO>::essential_t)
-
-    TUPLE_GETS(::example::real::data_t<example::real::mode_e::MONO>::essential_t)
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::real::data_t<example::real::mode_e::MONO>) {
-        using type_t = ::example::real::data_t<example::real::mode_e::MONO>;
-        TUPLE_BRANCH(object_id,     type_t) else
-        TUPLE_BRANCH(packt_idx,     type_t) else
-        TUPLE_BRANCH(timestamp,     type_t) else
-        TUPLE_BRANCH(iunit_width,   type_t) else
-        TUPLE_BRANCH(iunit_height,  type_t) else
-        TUPLE_BRANCH(detections,    type_t)
-    }
-
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::MONO>)
-
-    TUPLE_ELEMENT(object_id, ::example::real::data_t<example::real::mode_e::MONO>)
-    TUPLE_ELEMENT(packt_idx, ::example::real::data_t<example::real::mode_e::MONO>)
-    TUPLE_ELEMENT(timestamp, ::example::real::data_t<example::real::mode_e::MONO>)
-    TUPLE_ELEMENT(iunit_width, ::example::real::data_t<example::real::mode_e::MONO>)
-    TUPLE_ELEMENT(iunit_height, ::example::real::data_t<example::real::mode_e::MONO>)
-    TUPLE_ELEMENT(detections, ::example::real::data_t<example::real::mode_e::MONO>)
-
-    TUPLE_GETS(::example::real::data_t<example::real::mode_e::MONO>)
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::real::data_t<example::real::mode_e::ARRAY>) {
-        TUPLE_BRANCH(data, ::example::real::data_t<example::real::mode_e::ARRAY>)
-    }
-
-    TUPLE_DEFINE(::example::real::data_t<example::real::mode_e::ARRAY>)
-
-    TUPLE_ELEMENT(data, ::example::real::data_t<example::real::mode_e::ARRAY>)
-
-    TUPLE_GETS(::example::real::data_t<example::real::mode_e::ARRAY>)
+    SBIND_IFACE(::example::real::data_t<example::real::mode_e::MONO>::essential_t::bbox_t, (x) (y) (width) (height))
+    SBIND_IFACE(::example::real::data_t<example::real::mode_e::MONO>::essential_t, (bbox) (score) (ssl_class) (ufc_class) (prn_class))
+    SBIND_IFACE(::example::real::data_t<example::real::mode_e::MONO>, (object_id) (packt_idx) (timestamp) (iunit_width) (iunit_height) (detections))
+    SBIND_IFACE(::example::real::data_t<example::real::mode_e::ARRAY>, (data))
 }

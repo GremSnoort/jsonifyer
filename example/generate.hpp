@@ -23,8 +23,6 @@ namespace example {
         return v;
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     template<std::size_t I, class T, std::enable_if_t<I < 1024, bool> = true>
     inline auto generate(std::size_t len, T& input) -> void {
         if constexpr (I == 0 && std::is_arithmetic_v<T> && (std::is_integral_v<T> || std::is_floating_point_v<T>)) {

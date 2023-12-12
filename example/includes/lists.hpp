@@ -27,7 +27,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (COUNT))
     };
 
     /**
@@ -54,7 +54,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -78,7 +78,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -102,7 +102,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -126,7 +126,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -153,7 +153,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -181,7 +181,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -209,7 +209,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -237,7 +237,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -265,7 +265,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -293,7 +293,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -319,7 +319,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -347,7 +347,7 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -375,288 +375,27 @@ namespace example::list {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
 }
 
 namespace std {
 
-    TUPLE_GET_IMPL_HEADER(::example::list::bool_lists_t) {
-        TUPLE_BRANCH(_0, ::example::list::bool_lists_t)
-    }
+    SBIND_IFACE(::example::list::bool_lists_t, (_0))
+    SBIND_IFACE(::example::list::int_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::signed_int_lists_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::list::unsigned_int_lists_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::list::char_lists_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::list::string_lists_t, (_0) (_1) (_2) (_3) (_4))
 
-    TUPLE_DEFINE(::example::list::bool_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::bool_lists_t)
-
-    TUPLE_GETS(::example::list::bool_lists_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::int_lists_t) {
-        using type_t = ::example::list::int_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::int_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::int_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::int_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::int_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::int_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::int_lists_t)
-
-    TUPLE_GETS(::example::list::int_lists_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::signed_int_lists_t) {
-        using type_t = ::example::list::signed_int_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::signed_int_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::signed_int_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::signed_int_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::signed_int_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::signed_int_lists_t)
-
-    TUPLE_GETS(::example::list::signed_int_lists_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::unsigned_int_lists_t) {
-        using type_t = ::example::list::unsigned_int_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::unsigned_int_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::unsigned_int_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::unsigned_int_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::unsigned_int_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::unsigned_int_lists_t)
-
-    TUPLE_GETS(::example::list::unsigned_int_lists_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::char_lists_t) {
-        using type_t = ::example::list::char_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::char_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::char_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::char_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::char_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::char_lists_t)
-
-    TUPLE_GETS(::example::list::char_lists_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::string_lists_t) {
-        using type_t = ::example::list::string_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::string_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::string_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::string_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::string_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::string_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::string_lists_t)
-
-    TUPLE_GETS(::example::list::string_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_int_lists_t) {
-        using type_t = ::example::list::custom_int_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_int_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_int_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_int_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_int_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_int_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_int_lists_t)
-
-    TUPLE_GETS(::example::list::custom_int_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_signed_int_lists_t) {
-        using type_t = ::example::list::custom_signed_int_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_signed_int_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_signed_int_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_signed_int_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_signed_int_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_signed_int_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_signed_int_lists_t)
-
-    TUPLE_GETS(::example::list::custom_signed_int_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_unsigned_int_lists_t) {
-        using type_t = ::example::list::custom_unsigned_int_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_unsigned_int_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_unsigned_int_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_unsigned_int_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_unsigned_int_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_unsigned_int_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_unsigned_int_lists_t)
-
-    TUPLE_GETS(::example::list::custom_unsigned_int_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_char_lists_t) {
-        using type_t = ::example::list::custom_char_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_char_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_char_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_char_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_char_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_char_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_char_lists_t)
-
-    TUPLE_GETS(::example::list::custom_char_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_float_lists_t) {
-        using type_t = ::example::list::custom_float_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_float_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_float_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_float_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_float_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_float_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_float_lists_t)
-
-    TUPLE_GETS(::example::list::custom_float_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_mix_lists_t) {
-        using type_t = ::example::list::custom_mix_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_mix_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_mix_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_mix_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_mix_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_mix_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_mix_lists_t)
-
-    TUPLE_GETS(::example::list::custom_mix_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_float_l_lists_t) {
-        using type_t = ::example::list::custom_float_l_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_float_l_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_float_l_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_float_l_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_float_l_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_float_l_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_float_l_lists_t)
-
-    TUPLE_GETS(::example::list::custom_float_l_lists_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::list::custom_float_s_lists_t) {
-        using type_t = ::example::list::custom_float_s_lists_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::list::custom_float_s_lists_t)
-
-    TUPLE_ELEMENT(_0, ::example::list::custom_float_s_lists_t)
-    TUPLE_ELEMENT(_1, ::example::list::custom_float_s_lists_t)
-    TUPLE_ELEMENT(_2, ::example::list::custom_float_s_lists_t)
-    TUPLE_ELEMENT(_3, ::example::list::custom_float_s_lists_t)
-    TUPLE_ELEMENT(_4, ::example::list::custom_float_s_lists_t)
-
-    TUPLE_GETS(::example::list::custom_float_s_lists_t)
+    SBIND_IFACE(::example::list::custom_int_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::custom_signed_int_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::custom_unsigned_int_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::custom_char_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::custom_float_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::custom_mix_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::custom_float_l_lists_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::list::custom_float_s_lists_t, (_0) (_1) (_2) (_3) (_4))
 
 }

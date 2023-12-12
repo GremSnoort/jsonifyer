@@ -29,7 +29,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (COUNT))
     };
 
     /**
@@ -56,7 +56,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -80,7 +80,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -104,7 +104,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -128,7 +128,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
     /**
@@ -155,7 +155,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -183,7 +183,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -211,7 +211,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -239,7 +239,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -267,7 +267,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -295,7 +295,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -321,7 +321,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -349,7 +349,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -377,7 +377,7 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     /**
@@ -405,309 +405,28 @@ namespace example::vector {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
 }
 
 namespace std {
 
-    TUPLE_GET_IMPL_HEADER(::example::vector::bool_vectors_t) {
-        TUPLE_BRANCH(_0, ::example::vector::bool_vectors_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::bool_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::bool_vectors_t)
-
-    TUPLE_GETS(::example::vector::bool_vectors_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::int_vectors_t) {
-        using type_t = ::example::vector::int_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::int_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::int_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::int_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::int_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::int_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::int_vectors_t)
-
-    TUPLE_GETS(::example::vector::int_vectors_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::signed_int_vectors_t) {
-        using type_t = ::example::vector::signed_int_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::signed_int_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::signed_int_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::signed_int_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::signed_int_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::signed_int_vectors_t)
-
-    TUPLE_GETS(::example::vector::signed_int_vectors_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::unsigned_int_vectors_t) {
-        using type_t = ::example::vector::unsigned_int_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::unsigned_int_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::unsigned_int_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::unsigned_int_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::unsigned_int_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::unsigned_int_vectors_t)
-
-    TUPLE_GETS(::example::vector::unsigned_int_vectors_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::char_vectors_t) {
-        using type_t = ::example::vector::char_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::char_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::char_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::char_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::char_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::char_vectors_t)
-
-    TUPLE_GETS(::example::vector::char_vectors_t)
-    
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::string_vectors_t) {
-        using type_t = ::example::vector::string_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::string_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::string_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::string_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::string_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::string_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::string_vectors_t)
-
-    TUPLE_GETS(::example::vector::string_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_int_vectors_t) {
-        using type_t = ::example::vector::custom_int_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_int_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_int_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_int_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_int_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_int_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_int_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_int_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_signed_int_vectors_t) {
-        using type_t = ::example::vector::custom_signed_int_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_signed_int_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_signed_int_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_signed_int_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_signed_int_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_signed_int_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_signed_int_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_signed_int_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_unsigned_int_vectors_t) {
-        using type_t = ::example::vector::custom_unsigned_int_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_unsigned_int_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_unsigned_int_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_unsigned_int_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_unsigned_int_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_unsigned_int_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_unsigned_int_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_unsigned_int_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_char_vectors_t) {
-        using type_t = ::example::vector::custom_char_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_char_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_char_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_char_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_char_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_char_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_char_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_char_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_float_vectors_t) {
-        using type_t = ::example::vector::custom_float_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_float_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_float_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_float_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_float_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_float_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_float_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_float_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_mix_vectors_t) {
-        using type_t = ::example::vector::custom_mix_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_mix_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_mix_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_mix_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_mix_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_mix_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_mix_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_mix_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_float_v_vectors_t) {
-        using type_t = ::example::vector::custom_float_v_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_float_v_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_float_v_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_float_v_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_float_v_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_float_v_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_float_v_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_float_v_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_float_s_vectors_t) {
-        using type_t = ::example::vector::custom_float_s_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_float_s_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_float_s_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_float_s_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_float_s_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_float_s_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_float_s_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_float_s_vectors_t)
-
-    ///////////////////////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::vector::custom_float_m_vectors_t) {
-        using type_t = ::example::vector::custom_float_m_vectors_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
-
-    TUPLE_DEFINE(::example::vector::custom_float_m_vectors_t)
-
-    TUPLE_ELEMENT(_0, ::example::vector::custom_float_m_vectors_t)
-    TUPLE_ELEMENT(_1, ::example::vector::custom_float_m_vectors_t)
-    TUPLE_ELEMENT(_2, ::example::vector::custom_float_m_vectors_t)
-    TUPLE_ELEMENT(_3, ::example::vector::custom_float_m_vectors_t)
-    TUPLE_ELEMENT(_4, ::example::vector::custom_float_m_vectors_t)
-
-    TUPLE_GETS(::example::vector::custom_float_m_vectors_t)
+    SBIND_IFACE(::example::vector::bool_vectors_t, (_0))
+    SBIND_IFACE(::example::vector::int_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::signed_int_vectors_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::vector::unsigned_int_vectors_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::vector::char_vectors_t, (_0) (_1) (_2) (_3))
+    SBIND_IFACE(::example::vector::string_vectors_t, (_0) (_1) (_2) (_3) (_4))
+
+    SBIND_IFACE(::example::vector::custom_int_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_signed_int_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_unsigned_int_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_char_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_float_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_mix_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_float_v_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_float_s_vectors_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::vector::custom_float_m_vectors_t, (_0) (_1) (_2) (_3) (_4))
 
 }

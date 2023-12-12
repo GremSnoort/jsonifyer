@@ -16,7 +16,7 @@ namespace minimal {
          * It's necessary to define this member type enumeration,
          * fields of enum MUST be named same as the class fields.
          **/
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (COUNT))
     };
 
 }
@@ -31,24 +31,6 @@ namespace std {
     * for your type.
     **/
 
-    TUPLE_GET_IMPL_HEADER(::minimal::unit_t) {
-        using type_t = ::minimal::unit_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t)
-    }
-
-    TUPLE_DEFINE(::minimal::unit_t)
-
-    TUPLE_ELEMENT(_0, ::minimal::unit_t)
-    TUPLE_ELEMENT(_1, ::minimal::unit_t)
-    TUPLE_ELEMENT(_2, ::minimal::unit_t)
-    TUPLE_ELEMENT(_3, ::minimal::unit_t)
-
-    /**
-     * std::get<> (const/non const access) for custom class
-     **/
-    TUPLE_GETS(::minimal::unit_t)
+    SBIND_IFACE(::minimal::unit_t, (_0) (_1) (_2) (_3))
 
 }

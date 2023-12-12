@@ -29,7 +29,7 @@ namespace example::string {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
+        SBIND_ID_CLASS(int, (_0) (_1) (_2) (_3) (_4) (COUNT))
     };
 
     struct strings_inherited_t : public strings_t {
@@ -53,8 +53,8 @@ namespace example::string {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_BASE_CLASS(strings_t)
-        DEFINE_ID_CLASS(int, (_5) (_6) (_7) (_8) (_9) (COUNT))
+        SBIND_BASE_CLASS(strings_t)
+        SBIND_ID_CLASS(int, (_5) (_6) (_7) (_8) (_9) (COUNT))
     };
 
     struct strings_inherited_2_t : public strings_inherited_t {
@@ -78,72 +78,16 @@ namespace example::string {
             return operator==(static_cast<const self_t&>(other));
         }
 
-        DEFINE_BASE_CLASS(strings_inherited_t)
-        DEFINE_ID_CLASS(int, (_10) (_11) (_12) (_13) (_14) (COUNT))
+        SBIND_BASE_CLASS(strings_inherited_t)
+        SBIND_ID_CLASS(int, (_10) (_11) (_12) (_13) (_14) (COUNT))
     };
 
 }
 
 namespace std {
 
-    TUPLE_GET_IMPL_HEADER(::example::string::strings_t) {
-        using type_t = ::example::string::strings_t;
-        TUPLE_BRANCH(_0, type_t) else
-        TUPLE_BRANCH(_1, type_t) else
-        TUPLE_BRANCH(_2, type_t) else
-        TUPLE_BRANCH(_3, type_t) else
-        TUPLE_BRANCH(_4, type_t)
-    }
+    SBIND_IFACE(::example::string::strings_t, (_0) (_1) (_2) (_3) (_4))
+    SBIND_IFACE(::example::string::strings_inherited_t, (_5) (_6) (_7) (_8) (_9))
+    SBIND_IFACE(::example::string::strings_inherited_2_t, (_10) (_11) (_12) (_13) (_14))
 
-    TUPLE_DEFINE(::example::string::strings_t)
-
-    TUPLE_ELEMENT(_0, ::example::string::strings_t)
-    TUPLE_ELEMENT(_1, ::example::string::strings_t)
-    TUPLE_ELEMENT(_2, ::example::string::strings_t)
-    TUPLE_ELEMENT(_3, ::example::string::strings_t)
-    TUPLE_ELEMENT(_4, ::example::string::strings_t)
-
-    TUPLE_GETS(::example::string::strings_t)
-
-    ///////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::string::strings_inherited_t) {
-        using type_t = ::example::string::strings_inherited_t;
-        TUPLE_BRANCH(_5, type_t) else
-        TUPLE_BRANCH(_6, type_t) else
-        TUPLE_BRANCH(_7, type_t) else
-        TUPLE_BRANCH(_8, type_t) else
-        TUPLE_BRANCH(_9, type_t)
-    }
-
-    TUPLE_DEFINE(::example::string::strings_inherited_t)
-
-    TUPLE_ELEMENT(_5, ::example::string::strings_inherited_t)
-    TUPLE_ELEMENT(_6, ::example::string::strings_inherited_t)
-    TUPLE_ELEMENT(_7, ::example::string::strings_inherited_t)
-    TUPLE_ELEMENT(_8, ::example::string::strings_inherited_t)
-    TUPLE_ELEMENT(_9, ::example::string::strings_inherited_t)
-
-    TUPLE_GETS(::example::string::strings_inherited_t)
-
-    ///////////////////////////////////////////////////////////////
-
-    TUPLE_GET_IMPL_HEADER(::example::string::strings_inherited_2_t) {
-        using type_t = ::example::string::strings_inherited_2_t;
-        TUPLE_BRANCH(_10, type_t) else
-        TUPLE_BRANCH(_11, type_t) else
-        TUPLE_BRANCH(_12, type_t) else
-        TUPLE_BRANCH(_13, type_t) else
-        TUPLE_BRANCH(_14, type_t)
-    }
-
-    TUPLE_DEFINE(::example::string::strings_inherited_2_t)
-
-    TUPLE_ELEMENT(_10, ::example::string::strings_inherited_2_t)
-    TUPLE_ELEMENT(_11, ::example::string::strings_inherited_2_t)
-    TUPLE_ELEMENT(_12, ::example::string::strings_inherited_2_t)
-    TUPLE_ELEMENT(_13, ::example::string::strings_inherited_2_t)
-    TUPLE_ELEMENT(_14, ::example::string::strings_inherited_2_t)
-
-    TUPLE_GETS(::example::string::strings_inherited_2_t)
 }

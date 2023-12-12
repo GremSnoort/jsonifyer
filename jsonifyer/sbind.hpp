@@ -10,12 +10,12 @@
 #define ID_CLASS_NAME __id_e
 #define BASE_TYPE_CLASS __base_t
 
-#define DEFINE_ID_CLASS(type, enumerators) \
+#define SBIND_ID_CLASS(type, enumerators) \
     enum class ID_CLASS_NAME : type {      \
         BOOST_PP_SEQ_ENUM(enumerators)     \
     };
 
-#define DEFINE_BASE_CLASS(base) \
+#define SBIND_BASE_CLASS(base) \
     using BASE_TYPE_CLASS = base;
 
 namespace jsonifyer::type_traits {
@@ -48,36 +48,36 @@ namespace jsonifyer::type_traits {
 /// for your type.
 ///
 
-#define TUPLE_DEFINE(structure) \
-    template <typename T> struct tuple_name; \
-    template <> struct tuple_name<structure> { \
-        static constexpr auto name = (BOOST_PP_STRINGIZE(structure)); \
-    }; \
-    template <> struct tuple_size<structure> \
-        : std::integral_constant<std::size_t, static_cast<std::size_t>(structure::ID_CLASS_NAME::COUNT)> { };
+#define __SB_BRANCH(r, data, field) \
+    if constexpr (I == static_cast<std::size_t>(data::field)) { \
+        return u.field; \
+    }
 
-#define TUPLE_ELEMENT(field, structure) \
+#define __SB_TUPLE_ELEMENT(r, structure, field) \
     template <> struct tuple_element<static_cast<std::size_t>(structure::ID_CLASS_NAME::field), structure> { \
         using type = decltype(structure::field); \
         static constexpr auto name = (BOOST_PP_STRINGIZE(field)); \
     };
 
-#define TUPLE_GETS(class_) \
+#define SBIND_IFACE(structure, enumerators) \
+    template<std::size_t I, typename T, \
+             std::enable_if_t<std::is_same_v<std::remove_const_t<std::remove_reference_t<T>>, structure>, bool> = true> \
+    inline auto&& get_impl(T&& u) { \
+        using id_e = typename structure::ID_CLASS_NAME; \
+        BOOST_PP_SEQ_FOR_EACH(__SB_BRANCH, id_e, enumerators) \
+    } \
+    template <typename T> struct tuple_name; \
+    template <> struct tuple_name<structure> { \
+        static constexpr auto name = (BOOST_PP_STRINGIZE(structure)); \
+    }; \
+    template <> struct tuple_size<structure> \
+        : std::integral_constant<std::size_t, static_cast<std::size_t>(structure::ID_CLASS_NAME::COUNT)> { }; \
+    BOOST_PP_SEQ_FOR_EACH(__SB_TUPLE_ELEMENT, structure, enumerators) \
     template<std::size_t I> \
-    inline auto& get(class_ &u) { \
+    inline auto& get(structure &u) { \
         return std::get_impl<I>(u); \
     } \
     template<std::size_t I> \
-    inline const auto& get(const class_ &u) { \
+    inline const auto& get(const structure &u) { \
         return std::get_impl<I>(u); \
-    }
-
-#define TUPLE_GET_IMPL_HEADER(class_) \
-    template<std::size_t I, typename T, \
-             std::enable_if_t<std::is_same_v<std::remove_const_t<std::remove_reference_t<T>>, class_>, bool> = true> \
-    inline auto&& get_impl(T&& u)
-
-#define TUPLE_BRANCH(field, structure) \
-    if constexpr (I == static_cast<std::size_t>(structure::ID_CLASS_NAME::field)) { \
-        return u.field; \
     }
