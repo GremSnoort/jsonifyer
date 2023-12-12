@@ -1,6 +1,5 @@
 name: GCC Builds
-#on: [push]
-on: []
+on: [push]
 
 jobs:
   build:
