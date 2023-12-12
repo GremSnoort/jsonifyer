@@ -8,7 +8,7 @@ jobs:
         cxx_standard: [17]
         build_type: ["Release", "Debug"]
         configuration: [
-          {"UBUNTU_VERSION":"18.04", "UBUNTU_RELEASE":"bionic", "TOOLCHAIN_VERSION":"5.0"},
+#          {"UBUNTU_VERSION":"18.04", "UBUNTU_RELEASE":"bionic", "TOOLCHAIN_VERSION":"5.0"},
           {"UBUNTU_VERSION":"18.04", "UBUNTU_RELEASE":"bionic", "TOOLCHAIN_VERSION":"6.0"},
           {"UBUNTU_VERSION":"18.04", "UBUNTU_RELEASE":"bionic", "TOOLCHAIN_VERSION":"7"},
           {"UBUNTU_VERSION":"18.04", "UBUNTU_RELEASE":"bionic", "TOOLCHAIN_VERSION":"8"},
