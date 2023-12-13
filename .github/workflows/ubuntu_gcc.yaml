@@ -1,0 +1,128 @@
+name: GCC Builds
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        cxx_standard: [17]
+        build_type: ["Release", "Debug"]
+        ### Possible values are ['4.1', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9', '5', '5.1', '5.2', '5.3', '5.4', '5.5', '6', '6.1', '6.2', '6.3', '6.4', '6.5', '7', '7.1', '7.2', '7.3', '7.4', '7.5', '8', '8.1', '8.2', '8.3', '8.4', '8.5', '9', '9.1', '9.2', '9.3', '9.4', '9.5', '10', '10.1', '10.2', '10.3', '10.4', '11', '11.1', '11.2', '11.3', '12', '12.1', '12.2']
+        configuration: [
+          {"UBUNTU_VERSION":"18.04", "TOOLCHAIN_VERSION":"7"},
+          {"UBUNTU_VERSION":"18.04", "TOOLCHAIN_VERSION":"8"},
+
+          {"UBUNTU_VERSION":"20.04", "TOOLCHAIN_VERSION":"7"},
+          {"UBUNTU_VERSION":"20.04", "TOOLCHAIN_VERSION":"8"},
+          {"UBUNTU_VERSION":"20.04", "TOOLCHAIN_VERSION":"9"},
+          {"UBUNTU_VERSION":"20.04", "TOOLCHAIN_VERSION":"10"},
+
+          {"UBUNTU_VERSION":"22.04", "TOOLCHAIN_VERSION":"9"},
+          {"UBUNTU_VERSION":"22.04", "TOOLCHAIN_VERSION":"10"},
+          {"UBUNTU_VERSION":"22.04", "TOOLCHAIN_VERSION":"11"},
+          {"UBUNTU_VERSION":"22.04", "TOOLCHAIN_VERSION":"12"}
+        ]
+
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:${{matrix.configuration.UBUNTU_VERSION}}
+
+    steps:
+      - name: Install system dependencies before checkout
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          apt update
+          apt-get install -y \
+            software-properties-common ca-certificates \
+            ninja-build make \
+            zlib1g-dev wget
+
+          add-apt-repository ppa:git-core/ppa
+          apt update && apt install -y git
+          git --version
+
+      - uses: actions/checkout@v2
+
+      - name: Install system dependencies after checkout
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          add-apt-repository ppa:ubuntu-toolchain-r/test
+
+          bash ./build/gcc/pyinstall.sh $(cat /etc/os-release | grep -a UBUNTU_CODENAME | sed -e 's/UBUNTU_CODENAME=//g')
+
+          python3 -m pip install --upgrade pip
+          python3 -m pip install --no-cache-dir conan==1.59 cmake
+
+      - name: Install compiler
+        run: |
+          apt update && apt-get install -y gcc-${{matrix.configuration.TOOLCHAIN_VERSION}} g++-${{matrix.configuration.TOOLCHAIN_VERSION}}
+          update-alternatives \
+            --install /usr/bin/gcc gcc /usr/bin/gcc-${{matrix.configuration.TOOLCHAIN_VERSION}} 90 \
+            --slave /usr/bin/g++ g++ /usr/bin/g++-${{matrix.configuration.TOOLCHAIN_VERSION}} \
+            --slave /usr/bin/gcov gcov /usr/bin/gcov-${{matrix.configuration.TOOLCHAIN_VERSION}}
+
+          update-alternatives --config gcc
+
+      - name: Configure CMake
+        env:
+          CC: gcc-${{matrix.configuration.TOOLCHAIN_VERSION}}
+          CXX: g++-${{matrix.configuration.TOOLCHAIN_VERSION}}
+          BUILD_TYPE: ${{matrix.build_type}}
+          CXX_STANDARD: ${{matrix.cxx_standard}}
+        run: |
+          mkdir -p local_build
+          cmake -B local_build -GNinja \
+            -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
+            -DCMAKE_CXX_STANDARD=${CXX_STANDARD} \
+            -DCMAKE_C_COMPILER=${CC} \
+            -DCMAKE_CXX_COMPILER=${CXX}
+
+      - name: Build
+        run: cmake --build local_build
+
+      - name: Test
+        working-directory: local_build
+        run: ctest --rerun-failed --output-on-failure
+
+      - name: Run benchmark
+        run: |
+          cd local_build/bin
+          ./benchmark_process --benchmark_format=json | tee benchmark_process_result.json
+          ./benchmark_serialize --benchmark_format=json | tee benchmark_serialize_result.json
+          ./benchmark_parse --benchmark_format=json | tee benchmark_parse_result.json
+          cd ../../ && echo ${PWD}
+          git config --global --add safe.directory ${PWD}
+          cat ~/.gitconfig
+
+      - name: Store benchmark_process result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          name: 'Benchmark Serialize&Parse gcc-${{matrix.configuration.TOOLCHAIN_VERSION}} ${{matrix.configuration.UBUNTU_VERSION}} ${{matrix.build_type}} c++-${{matrix.cxx_standard}}'
+          tool: 'googlecpp'
+          output-file-path: local_build/bin/benchmark_process_result.json
+          benchmark-data-dir-path: dev/bench/gcc_${{matrix.configuration.UBUNTU_VERSION}}_${{matrix.configuration.TOOLCHAIN_VERSION}}_${{matrix.build_type}}_${{matrix.cxx_standard}}/process
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
+
+      - name: Store benchmark_serialize result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          name: 'Benchmark Serialize gcc-${{matrix.configuration.TOOLCHAIN_VERSION}} ${{matrix.configuration.UBUNTU_VERSION}} ${{matrix.build_type}} c++-${{matrix.cxx_standard}}'
+          tool: 'googlecpp'
+          output-file-path: local_build/bin/benchmark_serialize_result.json
+          benchmark-data-dir-path: dev/bench/gcc_${{matrix.configuration.UBUNTU_VERSION}}_${{matrix.configuration.TOOLCHAIN_VERSION}}_${{matrix.build_type}}_${{matrix.cxx_standard}}/serialize
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
+
+      - name: Store benchmark_parse result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          name: 'Benchmark Parse gcc-${{matrix.configuration.TOOLCHAIN_VERSION}} ${{matrix.configuration.UBUNTU_VERSION}} ${{matrix.build_type}} c++-${{matrix.cxx_standard}}'
+          tool: 'googlecpp'
+          output-file-path: local_build/bin/benchmark_parse_result.json
+          benchmark-data-dir-path: dev/bench/gcc_${{matrix.configuration.UBUNTU_VERSION}}_${{matrix.configuration.TOOLCHAIN_VERSION}}_${{matrix.build_type}}_${{matrix.cxx_standard}}/parse
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
