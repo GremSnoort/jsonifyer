@@ -1,3 +1,5 @@
+#pragma once
+
 // std
 #include <typeinfo>
 #include <fstream>
