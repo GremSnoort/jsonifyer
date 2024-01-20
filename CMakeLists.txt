@@ -53,14 +53,18 @@ endif ()
 include(conan.cmake)
 
 conan_cmake_run(REQUIRES
-    boost/1.81.0
-    fmt/10.1.1
+    bzip2/1.0.8
+    zlib/1.3
+    boost/1.83.0
+    fmt/10.2.0
     catch2/3.3.2
     benchmark/1.8.3
     nlohmann_json/3.11.3 ### for benchmarks only
     BASIC_SETUP CMAKE_TARGETS
     ENV CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
     BUILD missing
+    OPTIONS
+    boost:header_only=True
 )
 
 # conan
