@@ -21,6 +21,8 @@ option(CONAN_EXPERIMENTAL_INCLUDE "CONAN EXPERIMENT INCLUDE" ON)
 
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
+if (WIN32)
+else()
 add_compile_options(
 #    -Werror
     -Wunused
@@ -42,26 +44,81 @@ add_compile_options(
     -Wno-deprecated
     -Wno-deprecated-declarations
 )
+endif()
 
 # configuration
 #############################################################################################
 #conan
 
-if (CONAN_EXPERIMENTAL_INCLUDE)
-    set(CONAN_SYSTEM_INCLUDES "On")
-endif ()
-include(conan.cmake)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
+#list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-conan_cmake_run(REQUIRES
-    boost/1.81.0
-    fmt/10.1.1
-    catch2/3.3.2
-    benchmark/1.8.3
-    nlohmann_json/3.11.3 ### for benchmarks only
-    BASIC_SETUP CMAKE_TARGETS
-    ENV CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
-    BUILD missing
-)
+include(conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
+
+#include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+
+find_package(ZLIB REQUIRED)
+find_package(bzip2 REQUIRED)
+find_package(fmt REQUIRED)
+find_package(Catch2 REQUIRED)
+find_package(benchmark REQUIRED)
+find_package(boost REQUIRED)
+find_package(nlohmann_json REQUIRED)
+
+if (ZLIB_FOUND)
+message(STATUS "CONAN_INCLUDE_DIRS_ZLIB = " ${CONAN_INCLUDE_DIRS_ZLIB})
+message(STATUS "CONAN_LIB_DIRS_ZLIB = " ${CONAN_LIB_DIRS_ZLIB})
+endif()
+
+if (BZIP2_FOUND)
+message(STATUS "CONAN_INCLUDE_DIRS_BZIP2 = " ${CONAN_INCLUDE_DIRS_BZIP2})
+message(STATUS "CONAN_LIB_DIRS_BZIP2 = " ${CONAN_LIB_DIRS_BZIP2})
+endif()
+
+if (FMT_FOUND)
+message(STATUS "CONAN_INCLUDE_DIRS_FMT = " ${CONAN_INCLUDE_DIRS_FMT})
+message(STATUS "CONAN_LIB_DIRS_FMT = " ${CONAN_LIB_DIRS_FMT})
+endif()
+
+if (CATCH2_FOUND)
+message(STATUS "CONAN_INCLUDE_DIRS_CATCH2 = " ${CONAN_INCLUDE_DIRS_CATCH2})
+message(STATUS "CONAN_LIB_DIRS_CATCH2 = " ${CONAN_LIB_DIRS_CATCH2})
+endif()
+
+if (BENCHMARK_FOUND)
+message(STATUS "CONAN_INCLUDE_DIRS_BENCHMARK = " ${CONAN_INCLUDE_DIRS_BENCHMARK})
+message(STATUS "CONAN_LIB_DIRS_BENCHMARK = " ${CONAN_LIB_DIRS_BENCHMARK})
+endif()
+
+if (BOOST_FOUND)
+message(STATUS "CONAN_INCLUDE_DIRS_BOOST = " ${CONAN_INCLUDE_DIRS_BOOST})
+message(STATUS "CONAN_LIB_DIRS_BOOST = " ${CONAN_LIB_DIRS_BOOST})
+endif()
+
+if (NLOHMANN_JSON_FOUND)
+message(STATUS "CONAN_INCLUDE_DIRS_NLOHMANN_JSON = " ${CONAN_INCLUDE_DIRS_NLOHMANN_JSON})
+message(STATUS "CONAN_LIB_DIRS_NLOHMANN_JSON = " ${CONAN_LIB_DIRS_NLOHMANN_JSON})
+endif()
+
+#include_directories(${ZLIB_INCLUDE_DIRS})
+#    target_link_libraries(enough ${ZLIB_LIBRARIES})
+
+#if (CONAN_EXPERIMENTAL_INCLUDE)
+#    set(CONAN_SYSTEM_INCLUDES "On")
+#endif ()
+#include(conan.cmake)
+#
+#conan_cmake_run(REQUIRES
+#    boost/1.81.0
+#    fmt/10.1.1
+#    catch2/3.3.2
+#    benchmark/1.8.3
+#    nlohmann_json/3.11.3 ### for benchmarks only
+#    BASIC_SETUP CMAKE_TARGETS
+#    ENV CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
+#    BUILD missing
+#)
 
 # conan
 #############################################################################################
