@@ -1,0 +1,10 @@
+[requires]
+zlib/1.3@fbs/stable
+bzip2/1.0.8@fbs/stable
+fmt/10.2.0@fbs/stable
+catch2/3.3.2@fbs/stable
+benchmark/1.8.3@fbs/stable
+boost/1.83.0@fbs/stable
+
+[generators]
+cmake_find_package
