@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1705778471130,
+  "lastUpdate": 1705953657575,
   "repoUrl": "https://github.com/GremSnoort/jsonifyer",
   "entries": {
     "Benchmark Parse clang-14 20.04 Release c++-17": [
@@ -3850,6 +3850,556 @@ window.BENCHMARK_DATA = {
             "value": 42464.19435396104,
             "unit": "ns/iter",
             "extra": "iterations: 16578\ncpu: 42462.498491976825 ns\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "GremSnoort",
+            "username": "GremSnoort",
+            "email": "33685945+GremSnoort@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4c1f90876aa9fbfe7c3d4e17807fabb3578467e0",
+          "message": "Update parser.hpp (#2)",
+          "timestamp": "2024-01-20T17:20:02Z",
+          "url": "https://github.com/GremSnoort/jsonifyer/commit/4c1f90876aa9fbfe7c3d4e17807fabb3578467e0"
+        },
+        "date": 1705953657159,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "fixture_t<0, example::real::data_t<example::real::mode_e::MONO>>/data_mono_0_parse",
+            "value": 533.3790798478806,
+            "unit": "ns/iter",
+            "extra": "iterations: 1317543\ncpu: 533.3407714207431 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<1, example::real::data_t<example::real::mode_e::MONO>>/data_mono_1_parse",
+            "value": 5105.18601000058,
+            "unit": "ns/iter",
+            "extra": "iterations: 100000\ncpu: 5105.207999999999 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<2, example::real::data_t<example::real::mode_e::MONO>>/data_mono_2_parse",
+            "value": 9944.82097432548,
+            "unit": "ns/iter",
+            "extra": "iterations: 84284\ncpu: 9944.510227326657 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<3, example::real::data_t<example::real::mode_e::MONO>>/data_mono_3_parse",
+            "value": 14459.099645241844,
+            "unit": "ns/iter",
+            "extra": "iterations: 57504\ncpu: 14458.555926544237 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<4, example::real::data_t<example::real::mode_e::MONO>>/data_mono_4_parse",
+            "value": 19091.007318083222,
+            "unit": "ns/iter",
+            "extra": "iterations: 43454\ncpu: 19090.256363050572 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<5, example::real::data_t<example::real::mode_e::MONO>>/data_mono_5_parse",
+            "value": 23888.564765952793,
+            "unit": "ns/iter",
+            "extra": "iterations: 35057\ncpu: 23888.070856034483 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<6, example::real::data_t<example::real::mode_e::MONO>>/data_mono_6_parse",
+            "value": 28597.27813624999,
+            "unit": "ns/iter",
+            "extra": "iterations: 29446\ncpu: 28596.824696053813 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<7, example::real::data_t<example::real::mode_e::MONO>>/data_mono_7_parse",
+            "value": 33568.95111413439,
+            "unit": "ns/iter",
+            "extra": "iterations: 24997\ncpu: 33566.97603712446 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<8, example::real::data_t<example::real::mode_e::MONO>>/data_mono_8_parse",
+            "value": 37906.07312146387,
+            "unit": "ns/iter",
+            "extra": "iterations: 22278\ncpu: 37904.82987700873 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<1024, example::integral::ints_t>/ints_parse",
+            "value": 509.8864440372196,
+            "unit": "ns/iter",
+            "extra": "iterations: 1376907\ncpu: 509.8618860968812 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<1024, example::integral::signed_ints_t>/signed_ints_parse",
+            "value": 408.96010218126384,
+            "unit": "ns/iter",
+            "extra": "iterations: 1731824\ncpu: 408.92527185210577 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<1024, example::integral::unsigned_ints_t>/unsigned_ints_parse",
+            "value": 408.6705197757061,
+            "unit": "ns/iter",
+            "extra": "iterations: 1713162\ncpu: 408.6560407013464 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<1024, example::integral::chars_t>/chars_parse",
+            "value": 392.13453878398605,
+            "unit": "ns/iter",
+            "extra": "iterations: 1784229\ncpu: 392.11575419971314 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<64, example::string::strings_t>/strings_parse",
+            "value": 843.7336223305261,
+            "unit": "ns/iter",
+            "extra": "iterations: 816386\ncpu: 843.6890147552745 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::bool_vectors_t>/bool_vectors_parse",
+            "value": 2008.4824553789188,
+            "unit": "ns/iter",
+            "extra": "iterations: 403115\ncpu: 2008.3395557099084 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::int_vectors_t>/int_vectors_parse",
+            "value": 10526.18222262409,
+            "unit": "ns/iter",
+            "extra": "iterations: 77323\ncpu: 10525.826726847112 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::signed_int_vectors_t>/signed_int_vectors_parse",
+            "value": 8081.81271143154,
+            "unit": "ns/iter",
+            "extra": "iterations: 101688\ncpu: 8081.504208952879 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::unsigned_int_vectors_t>/unsigned_int_vectors_parse",
+            "value": 8182.212264899497,
+            "unit": "ns/iter",
+            "extra": "iterations: 100808\ncpu: 8182.105586858196 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::char_vectors_t>/char_vectors_parse",
+            "value": 7664.924919435928,
+            "unit": "ns/iter",
+            "extra": "iterations: 106126\ncpu: 7664.872886945692 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::string_vectors_t>/string_vectors_parse",
+            "value": 29913.89325701185,
+            "unit": "ns/iter",
+            "extra": "iterations: 27777\ncpu: 29912.855959966888 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::custom_int_vectors_t>/custom_int_vectors_parse",
+            "value": 241462.81008494663,
+            "unit": "ns/iter",
+            "extra": "iterations: 3649\ncpu: 241454.31625102749 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::custom_signed_int_vectors_t>/custom_signed_int_vectors_parse",
+            "value": 185525.74013576724,
+            "unit": "ns/iter",
+            "extra": "iterations: 4714\ncpu: 185518.30717013142 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::custom_unsigned_int_vectors_t>/custom_unsigned_int_vectors_parse",
+            "value": 184184.14511647794,
+            "unit": "ns/iter",
+            "extra": "iterations: 4679\ncpu: 184176.1273776451 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::custom_char_vectors_t>/custom_char_vectors_parse",
+            "value": 183425.75026703006,
+            "unit": "ns/iter",
+            "extra": "iterations: 4681\ncpu: 183413.99273659484 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::custom_float_vectors_t>/custom_float_vectors_parse",
+            "value": 96233.61054027888,
+            "unit": "ns/iter",
+            "extra": "iterations: 9051\ncpu: 96230.05192796374 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::vector::custom_mix_vectors_t>/custom_mix_vectors_parse",
+            "value": 179225.33847803337,
+            "unit": "ns/iter",
+            "extra": "iterations: 4665\ncpu: 179218.4351554128 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::bool_lists_t>/bool_lists_parse",
+            "value": 5756.239605218087,
+            "unit": "ns/iter",
+            "extra": "iterations: 143269\ncpu: 5755.891365194152 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::int_lists_t>/int_lists_parse",
+            "value": 27303.85401531449,
+            "unit": "ns/iter",
+            "extra": "iterations: 30558\ncpu: 27284.815760193775 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::signed_int_lists_t>/signed_int_lists_parse",
+            "value": 21402.197536204938,
+            "unit": "ns/iter",
+            "extra": "iterations: 39289\ncpu: 21401.46860444395 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::unsigned_int_lists_t>/unsigned_int_lists_parse",
+            "value": 20910.53828271357,
+            "unit": "ns/iter",
+            "extra": "iterations: 40005\ncpu: 20909.74128233972 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::char_lists_t>/char_lists_parse",
+            "value": 20858.382049227574,
+            "unit": "ns/iter",
+            "extra": "iterations: 39898\ncpu: 20856.276003809722 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::string_lists_t>/string_lists_parse",
+            "value": 47576.87204251841,
+            "unit": "ns/iter",
+            "extra": "iterations: 17498\ncpu: 47576.248714138834 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_int_lists_t>/custom_int_lists_parse",
+            "value": 258019.53211009485,
+            "unit": "ns/iter",
+            "extra": "iterations: 3379\ncpu: 258008.84877182517 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_signed_int_lists_t>/custom_signed_int_lists_parse",
+            "value": 200271.6419244091,
+            "unit": "ns/iter",
+            "extra": "iterations: 4365\ncpu: 200258.09851088127 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_unsigned_int_lists_t>/custom_unsigned_int_lists_parse",
+            "value": 200815.22552692814,
+            "unit": "ns/iter",
+            "extra": "iterations: 4270\ncpu: 200805.55035128817 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_char_lists_t>/custom_char_lists_parse",
+            "value": 198664.43768580153,
+            "unit": "ns/iter",
+            "extra": "iterations: 4373\ncpu: 198657.16899153945 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_float_lists_t>/custom_float_lists_parse",
+            "value": 109569.40755192796,
+            "unit": "ns/iter",
+            "extra": "iterations: 7945\ncpu: 109565.14789175574 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_mix_lists_t>/custom_mix_lists_parse",
+            "value": 190641.16090425293,
+            "unit": "ns/iter",
+            "extra": "iterations: 4512\ncpu: 190630.71808510608 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_float_l_lists_t>/custom_float_l_lists_parse",
+            "value": 792984.7308332683,
+            "unit": "ns/iter",
+            "extra": "iterations: 1200\ncpu: 792942.5833333366 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::list::custom_float_s_lists_t>/custom_float_s_lists_parse",
+            "value": 439311.0167570625,
+            "unit": "ns/iter",
+            "extra": "iterations: 2029\ncpu: 439280.87727945024 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::bool_deques_t>/bool_deques_parse",
+            "value": 2124.20597013357,
+            "unit": "ns/iter",
+            "extra": "iterations: 380628\ncpu: 2124.1306472461347 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::int_deques_t>/int_deques_parse",
+            "value": 10706.73307137043,
+            "unit": "ns/iter",
+            "extra": "iterations: 76601\ncpu: 10706.097831620986 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::signed_int_deques_t>/signed_int_deques_parse",
+            "value": 8097.703549918605,
+            "unit": "ns/iter",
+            "extra": "iterations: 102115\ncpu: 8097.392155902662 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::unsigned_int_deques_t>/unsigned_int_deques_parse",
+            "value": 8214.91537864817,
+            "unit": "ns/iter",
+            "extra": "iterations: 100542\ncpu: 8214.586938791728 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::char_deques_t>/char_deques_parse",
+            "value": 8011.938095284055,
+            "unit": "ns/iter",
+            "extra": "iterations: 102787\ncpu: 8011.690194285301 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::string_deques_t>/string_deques_parse",
+            "value": 29373.25433383932,
+            "unit": "ns/iter",
+            "extra": "iterations: 28439\ncpu: 29371.767643025574 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::custom_int_deques_t>/custom_int_deques_parse",
+            "value": 243343.43664661262,
+            "unit": "ns/iter",
+            "extra": "iterations: 3662\ncpu: 243333.58820316734 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::custom_signed_int_deques_t>/custom_signed_int_deques_parse",
+            "value": 184441.6277418095,
+            "unit": "ns/iter",
+            "extra": "iterations: 4787\ncpu: 184433.46563609768 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::custom_unsigned_int_deques_t>/custom_unsigned_int_deques_parse",
+            "value": 185643.28177610005,
+            "unit": "ns/iter",
+            "extra": "iterations: 4752\ncpu: 185635.8164983169 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::custom_char_deques_t>/custom_char_deques_parse",
+            "value": 182736.40494494914,
+            "unit": "ns/iter",
+            "extra": "iterations: 4813\ncpu: 182726.0336588405 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::custom_float_deques_t>/custom_float_deques_parse",
+            "value": 95058.62575823233,
+            "unit": "ns/iter",
+            "extra": "iterations: 9232\ncpu: 95055.6975736567 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::deque::custom_mix_deques_t>/custom_mix_deques_parse",
+            "value": 178153.15848752516,
+            "unit": "ns/iter",
+            "extra": "iterations: 4972\ncpu: 178143.8053097359 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::bool_sets_t>/bool_sets_parse",
+            "value": 190.46641123428046,
+            "unit": "ns/iter",
+            "extra": "iterations: 3576419\ncpu: 190.45671102854413 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::int_sets_t>/int_sets_parse",
+            "value": 1459.9598786301021,
+            "unit": "ns/iter",
+            "extra": "iterations: 479196\ncpu: 1459.9460346079686 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::signed_int_sets_t>/signed_int_sets_parse",
+            "value": 1197.217283620255,
+            "unit": "ns/iter",
+            "extra": "iterations: 583026\ncpu: 1197.2076716990362 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::unsigned_int_sets_t>/unsigned_int_sets_parse",
+            "value": 1122.685825182223,
+            "unit": "ns/iter",
+            "extra": "iterations: 622717\ncpu: 1122.6651914111826 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::char_sets_t>/char_sets_parse",
+            "value": 840.142263775243,
+            "unit": "ns/iter",
+            "extra": "iterations: 835666\ncpu: 840.1168648718477 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::string_sets_t>/string_sets_parse",
+            "value": 9315.232043170086,
+            "unit": "ns/iter",
+            "extra": "iterations: 75236\ncpu: 9314.894465415537 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::custom_int_sets_t>/custom_int_sets_parse",
+            "value": 11661.047306376133,
+            "unit": "ns/iter",
+            "extra": "iterations: 59548\ncpu: 11660.772821925202 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::custom_signed_int_sets_t>/custom_signed_int_sets_parse",
+            "value": 2638.0413973497875,
+            "unit": "ns/iter",
+            "extra": "iterations: 263785\ncpu: 2637.993820725231 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::custom_unsigned_int_sets_t>/custom_unsigned_int_sets_parse",
+            "value": 2588.9718249322286,
+            "unit": "ns/iter",
+            "extra": "iterations: 269884\ncpu: 2588.9841561559806 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::custom_char_sets_t>/custom_char_sets_parse",
+            "value": 2576.591047596058,
+            "unit": "ns/iter",
+            "extra": "iterations: 272061\ncpu: 2576.5412903723864 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::custom_float_sets_t>/custom_float_sets_parse",
+            "value": 5033.578260000695,
+            "unit": "ns/iter",
+            "extra": "iterations: 100000\ncpu: 5033.365000000032 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::set::custom_mix_sets_t>/custom_mix_sets_parse",
+            "value": 4978.597919486972,
+            "unit": "ns/iter",
+            "extra": "iterations: 140350\ncpu: 4978.405415033839 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::bool_maps_t>/bool_maps_parse",
+            "value": 1878.1674846229248,
+            "unit": "ns/iter",
+            "extra": "iterations: 373288\ncpu: 1878.126004586248 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::int_maps_t>/int_maps_parse",
+            "value": 9911.989420990552,
+            "unit": "ns/iter",
+            "extra": "iterations: 70517\ncpu: 9911.716323723302 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::signed_int_maps_t>/signed_int_maps_parse",
+            "value": 7963.409859862776,
+            "unit": "ns/iter",
+            "extra": "iterations: 87486\ncpu: 7963.11524129575 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::unsigned_int_maps_t>/unsigned_int_maps_parse",
+            "value": 7939.725510400669,
+            "unit": "ns/iter",
+            "extra": "iterations: 88313\ncpu: 7939.30225448132 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::char_maps_t>/char_maps_parse",
+            "value": 7751.582794502028,
+            "unit": "ns/iter",
+            "extra": "iterations: 89855\ncpu: 7751.3260252629625 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::string_maps_t>/string_maps_parse",
+            "value": 18636.02932927378,
+            "unit": "ns/iter",
+            "extra": "iterations: 37437\ncpu: 18635.817506744632 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::custom_int_maps_t>/custom_int_maps_parse",
+            "value": 52172.3810339636,
+            "unit": "ns/iter",
+            "extra": "iterations: 13424\ncpu: 52170.627234803396 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::custom_signed_int_maps_t>/custom_signed_int_maps_parse",
+            "value": 41647.496800187946,
+            "unit": "ns/iter",
+            "extra": "iterations: 16876\ncpu: 41646.06541834589 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::custom_unsigned_int_maps_t>/custom_unsigned_int_maps_parse",
+            "value": 41984.6632903808,
+            "unit": "ns/iter",
+            "extra": "iterations: 16685\ncpu: 41983.66197183118 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::custom_char_maps_t>/custom_char_maps_parse",
+            "value": 41420.79731894088,
+            "unit": "ns/iter",
+            "extra": "iterations: 16859\ncpu: 41420.950234296404 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::custom_float_maps_t>/custom_float_maps_parse",
+            "value": 24689.040805567896,
+            "unit": "ns/iter",
+            "extra": "iterations: 28452\ncpu: 24688.201180936267 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::map::custom_mix_maps_t>/custom_mix_maps_parse",
+            "value": 41022.242131593695,
+            "unit": "ns/iter",
+            "extra": "iterations: 17189\ncpu: 41020.431671417995 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::bool_unordered_maps_t>/bool_unordered_maps_parse",
+            "value": 1866.329598799792,
+            "unit": "ns/iter",
+            "extra": "iterations: 371934\ncpu: 1866.2934821769325 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::int_unordered_maps_t>/int_unordered_maps_parse",
+            "value": 11389.965870638965,
+            "unit": "ns/iter",
+            "extra": "iterations: 61765\ncpu: 11389.79357241148 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::signed_int_unordered_maps_t>/signed_int_unordered_maps_parse",
+            "value": 8924.887869416281,
+            "unit": "ns/iter",
+            "extra": "iterations: 77927\ncpu: 8924.667958473985 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::unsigned_int_unordered_maps_t>/unsigned_int_unordered_maps_parse",
+            "value": 9062.989997681834,
+            "unit": "ns/iter",
+            "extra": "iterations: 77682\ncpu: 9062.77773486782 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::char_unordered_maps_t>/char_unordered_maps_parse",
+            "value": 9547.02667467511,
+            "unit": "ns/iter",
+            "extra": "iterations: 73253\ncpu: 9546.683412283386 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::string_unordered_maps_t>/string_unordered_maps_parse",
+            "value": 19266.68716333711,
+            "unit": "ns/iter",
+            "extra": "iterations: 36201\ncpu: 19266.053423938396 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::custom_int_unordered_maps_t>/custom_int_unordered_maps_parse",
+            "value": 52421.5046177152,
+            "unit": "ns/iter",
+            "extra": "iterations: 13210\ncpu: 52421.73353520045 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::custom_signed_int_unordered_maps_t>/custom_signed_int_unordered_maps_parse",
+            "value": 43002.27702285497,
+            "unit": "ns/iter",
+            "extra": "iterations: 16190\ncpu: 43001.53798641192 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::custom_unsigned_int_unordered_maps_t>/custom_unsigned_int_unordered_maps_parse",
+            "value": 41187.61108151214,
+            "unit": "ns/iter",
+            "extra": "iterations: 16893\ncpu: 41185.37855916638 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::custom_char_unordered_maps_t>/custom_char_unordered_maps_parse",
+            "value": 41161.79252721228,
+            "unit": "ns/iter",
+            "extra": "iterations: 16995\ncpu: 41160.81788761454 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::custom_float_unordered_maps_t>/custom_float_unordered_maps_parse",
+            "value": 24915.27714497601,
+            "unit": "ns/iter",
+            "extra": "iterations: 28357\ncpu: 24914.673625560237 ns\nthreads: 1"
+          },
+          {
+            "name": "fixture_t<16, example::unordered_map::custom_mix_unordered_maps_t>/custom_mix_unordered_maps_parse",
+            "value": 41797.603871882195,
+            "unit": "ns/iter",
+            "extra": "iterations: 16891\ncpu: 41795.90314368542 ns\nthreads: 1"
           }
         ]
       }
