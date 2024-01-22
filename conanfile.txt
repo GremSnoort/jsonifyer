@@ -8,4 +8,5 @@ boost/1.83.0
 nlohmann_json/3.11.3
 
 [generators]
+cmake
 cmake_find_package
